@@ -1,0 +1,150 @@
+{
+  "plato:EnergyConservingMetric":
+  {
+    "class": "plato:Metric",
+    "rdfs:label": "EnergyConservingMetric",
+    "rdfs:comment": "A metric that focused on conserving energy",
+    "plato:hasPlanningName": "EnergyConservingMetric",
+    "objectProperties":
+    {
+      "plato:hasCostEquation": "plato:EnergyConservingMetricEquation"
+    },
+
+    "dataProperties": {
+      "plato:minimize": true
+    }
+  },
+
+  "//": "================= (2.0 * EnergyCost) + (1.0 * MaterialCost) =================",
+
+  "plato:EnergyConservingMetricEquation":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "EnergyConservingMetricEquation",
+    "rdfs:comment": "The root node for the equation: (2.0 * EnergyCost) + (1.0 * MaterialCost)",
+    "objectProperties":
+    {
+      "plato:representsOperator": "plato:AdditionOperator",
+      "plato:hasSubpartA": "plato:MaterialCostOperatorEquationPart",
+      "plato:hasSubpartB": "plato:EnergyCostOperatorEquationPart"
+    }
+  },
+
+  "///": "------------------------ (1.0 * MaterialCost) ------------------------",
+
+  "plato:MaterialCostOperatorEquationPart":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "MaterialCostOperatorEquationPart",
+    "rdfs:comment": "The * node for the equation: (2.0 * EnergyCost)",
+    "objectProperties":
+    {
+      "plato:representsOperator": "plato:MultiplicationOperator",
+      "plato:hasSubpartA": "plato:MaterialCostFunctionWeightPart",
+      "plato:hasSubpartB": "plato:MaterialCostFunctionCallPart"
+    }
+  },
+
+  "plato:MaterialCostFunctionWeightPart":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "MaterialCostFunctionWeightPart",
+    "rdfs:comment": "The CostEquationPart for the weight 1.0",
+    "objectProperties":
+    {
+      "plato:representsValue": "plato:MaterialCostFunctionWeightValue"
+    }
+  },
+
+  "plato:MaterialCostFunctionWeightValue":
+  {
+    "class": "plato:EquationValue",
+    "rdfs:label": "MaterialCostFunctionWeightValue",
+    "rdfs:comment": "The value 2.0",
+    "dataProperties":
+    {
+      "plato:hasStaticValue": "1.0"
+    }
+  },
+
+  "plato:MaterialCostFunctionCallPart":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "MaterialCostFunctionCallPart",
+    "rdfs:comment": "The part for the function call to the material cost function",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:MaterialCostFunctionCall"
+    }
+  },
+
+  "plato:MaterialCostFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "MaterialCostFunctionCall",
+    "rdfs:comment": "The function call to the material cost function",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:MaterialCost"
+    }
+  },
+
+  "////": "------------------------ (2.0 * EnergyCost) ------------------------",
+
+  "plato:EnergyCostOperatorEquationPart":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "EnergyCostOperatorEquationPart",
+    "rdfs:comment": "The * node for (2.0 * EnergyCost)",
+    "objectProperties":
+    {
+      "plato:representsOperator": "plato:MultiplicationOperator",
+      "plato:hasSubpartA": "plato:EnergyCostFunctionWeightPart",
+      "plato:hasSubpartB": "plato:EnergyCostFunctionCallPart"
+    }
+  },
+
+  "plato:EnergyCostFunctionWeightPart":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "EnergyCostFunctionWeightPart",
+    "rdfs:comment": "The CostEquationPart for the weight 2.0",
+    "objectProperties":
+    {
+      "plato:representsValue": "plato:EnergyCostFunctionWeightValue"
+    }
+  },
+
+  "plato:EnergyCostFunctionWeightValue":
+  {
+    "class": "plato:EquationValue",
+    "rdfs:label": "EnergyCostFunctionWeightValue",
+    "rdfs:comment": "The value 2.0",
+    "dataProperties":
+    {
+      "plato:hasStaticValue": "2.0"
+    }
+  },
+
+  "plato:EnergyCostFunctionCallPart":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "EnergyCostFunctionCallPart",
+    "rdfs:comment": "The CostEquationPart for the function call to the energy cost function",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:EnergyCostFunctionCall"
+    }
+  },
+
+  "plato:EnergyCostFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "EnergyCostFunctionCall",
+    "rdfs:comment": "The function call to the energy cost function",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:EnergyCost"
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "plato:AcrylonitrileButadieneStyrene":
+  {
+    "class": "plato:Entity",
+    "rdfs:label": "AcrylonitrileButadieneStyrene",
+    "plato:hasPlanningName": "ABS",
+    "rdfs:comment": "A material used for production services",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:3DPrintingMaterial"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:PolylacticAcid":
+  {
+    "class": "plato:Entity",
+    "rdfs:label": "PolylacticAcid",
+    "plato:hasPlanningName": "PLA",
+    "rdfs:comment": "A material used for production services",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:3DPrintingMaterial"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:NozzleTemperature":
+  {
+    "class": "plato:NumericConstant",
+    "rdfs:label": "NozzleTemperature",
+    "plato:hasPlanningName": "NozzleTemperature",
+    "rdfs:comment": "The nozzle temperature that is set for a 3d print",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Temperature"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningObject": true,
+      "plato:hasMinimumValue": "0",
+      "plato:hasMaximumValue": "250",
+      "plato:hasDiscreteStepValue": "10"
+    }
+  },
+
+  "plato:nozzleTemperatureUpTo250":
+  {
+    "class": "plato:NumericConstantReference",
+    "rdfs:label": "nozzleTemperatureUpTo250",
+    "rdfs:comment": "References plato:NozzleTemperature from 0 to 250",
+    "objectProperties":
+    {
+      "plato:referencesNumericConstant": "plato:NozzleTemperature"
+    },
+    "dataProperties":
+    {
+      "plato:hasMinimumValue": "0",
+      "plato:hasMaximumValue": "250"
+    }
+  },
+
+  "plato:nozzleTemperatureUpTo200":
+  {
+    "class": "plato:NumericConstantReference",
+    "rdfs:label": "nozzleTemperatureUpTo200",
+    "rdfs:comment": "References plato:NozzleTemperature from 0 to 200",
+    "objectProperties":
+    {
+      "plato:referencesNumericConstant": "plato:NozzleTemperature"
+    },
+    "dataProperties":
+    {
+      "plato:hasMinimumValue": "0",
+      "plato:hasMaximumValue": "200"
+    }
+  },
+
+  "plato:EstimatedPrintTime":
+  {
+    "class": "plato:NumericConstant",
+    "rdfs:label": "EstimatedPrintTime",
+    "plato:hasPlanningName": "EstimatedPrintTime",
+    "rdfs:comment": "The estimated print time for a 3d print",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Minutes"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningObject": true,
+      "plato:hasMinimumValue": "30",
+      "plato:hasMaximumValue": "900",
+      "plato:hasDiscreteStepValue": "30"
+    }
+  }
+}

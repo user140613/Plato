@@ -1,0 +1,311 @@
+{
+  "plato:TransportWorkpieceBetweenWarehousesCost":
+  {
+    "class": "plato:Cost",
+    "rdfs:label": "TransportWorkpieceBetweenWarehousesCost",
+    "rdfs:comment": "Transport Cost for transporting workpieces between warehouses",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:TotalCost",
+      "plato:hasCostEquation": "plato:TransportWorkpieceBetweenWarehousesCostCostEquation"
+    }
+  },
+
+
+  "plato:TransportWorkpieceBetweenWarehousesCostCostEquation":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "TransportWorkpieceBetweenWarehousesCostCostEquation",
+    "rdfs:comment": "Root node of the cost equation for the transport cost",
+    "objectProperties":
+    {
+      "plato:representsOperator": "plato:MultiplicationOperator",
+      "plato:hasSubpartA": "plato:TransportWorkpieceBetweenWarehousesCostEquationFunctionCall",
+      "plato:hasSubpartB": "plato:TransportWorkpieceBetweenWarehousesCostEquationFunctionCall2"
+
+    }
+  },
+
+
+
+
+  "plato:TransportWorkpieceBetweenWarehousesCostEquationFunctionCall":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "TransportWorkpieceBetweenWarehousesCostEquationFunctionCall",
+    "rdfs:comment": "Function call node of the cost equation for the transport cost",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:DeliveryCostWeightFunctionCall"
+
+    }
+  },
+
+  "plato:DeliveryCostWeightFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "DistanceCostWeightFunctionCall",
+    "rdfs:comment": "Function call for distance cost weight",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:DeliveryCostWeight"
+    }
+  },
+
+
+
+
+  "plato:TransportWorkpieceBetweenWarehousesCostEquationFunctionCall2":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "TransportWorkpieceBetweenWarehousesCostEquationFunctionCall2",
+    "rdfs:comment": "Function call node of the cost equation for the transport cost",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:DistanceFunctionCall"
+
+    }
+  },
+
+  "plato:DistanceFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "DistanceFunctionCall",
+    "rdfs:comment": "Function call for distances between warehouses",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:Distance",
+      "plato:withParameter": [
+        "plato:WarehouseParameter",
+        "plato:WarehouseParameter2"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderWarehouseParameter0",
+        "plato:EntityOrderWarehouseParameter2_1"
+      ]
+    }
+  },
+
+
+
+  "plato:CO2Cost":
+  {
+    "class": "plato:Cost",
+    "rdfs:label": "CO2Cost",
+    "rdfs:comment": "The CO2 cost for executing a service in a factory.",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:TotalCost",
+      "plato:hasCostEquation": "plato:CO2CostEquation"
+    }
+  },
+
+  "plato:CO2CostEquation":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "CO2CostEquation",
+    "rdfs:comment": "Root node of the cost equation for the CO2 cost",
+    "objectProperties":
+    {
+      "plato:representsOperator": "plato:MultiplicationOperator",
+      "plato:hasSubpartA": "plato:CO2CostEquationFunctionCall1",
+      "plato:hasSubpartB": "plato:CO2CostEquationFunctionCall2"
+    }
+  },
+
+
+
+  "plato:CO2CostEquationFunctionCall1":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "CO2CostEquationFunctionCall1",
+    "rdfs:comment": "Function call node of the cost equation for the CO2 cost",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:CO2EfficiencyFunctionCall"
+    }
+  },
+  "plato:CO2EfficiencyFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "CO2EfficiencyFunctionCall",
+    "rdfs:comment": "Function call for the CO2 efficiency of a factory",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:CO2Efficiency",
+      "plato:withParameter": "plato:FactoryParameter"
+    }
+  },
+
+
+
+  "plato:CO2CostEquationFunctionCall2":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "CO2CostEquationFunctionCall2",
+    "rdfs:comment": "Second function call node of the cost equation for the CO2 cost",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:CO2EfficiencyWeightFunctionCall"
+    }
+  },
+  "plato:CO2EfficiencyWeightFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "CO2EfficiencyWeightFunctionCall",
+    "rdfs:comment": "Function call for the CO2 efficiency weight",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:CO2EfficiencyWeight"
+    }
+  },
+
+
+
+
+  "plato:GeneralCost":
+  {
+    "class": "plato:Cost",
+    "rdfs:label": "GeneralCost",
+    "rdfs:comment": "The general cost for executing a service in a factory.",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:TotalCost",
+      "plato:hasCostEquation": "plato:GeneralCostEquation"
+    }
+  },
+
+  "plato:GeneralCostEquation":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "GeneralCostEquation",
+    "rdfs:comment": "Plus operator node of the cost equation for the general cost for running a service",
+    "objectProperties":
+    {
+      "plato:representsOperator": "plato:MultiplicationOperator",
+      "plato:hasSubpartA": "plato:GeneralCostEquationFunctionCall",
+      "plato:hasSubpartB": "plato:GeneralCostEquationFunctionCall2"
+    }
+  },
+
+  "plato:GeneralCostEquationFunctionCall":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "GeneralCostEquationFunctionCall",
+    "rdfs:comment": "CostEquationPart representing a function call to the general cost efficiency function",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:CostEfficiencyFunctionCall"
+
+    }
+  },
+
+  "plato:GeneralCostEquationFunctionCall2":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "GeneralCostEquationFunctionCall2",
+    "rdfs:comment": "CostEquationPart representing a function call to the general cost efficiency weight",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:CostEfficiencyWeightFunctionCall"
+
+    }
+  },
+
+  "plato:CostEfficiencyFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "CostEfficiencyFunctionCall",
+    "rdfs:comment": "Function call for the cost efficiency of a factory",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:CostEfficiency",
+      "plato:withParameter": "plato:FactoryParameter"
+    }
+  },
+
+  "plato:CostEfficiencyWeightFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "CostEfficiencyWeightFunctionCall",
+    "rdfs:comment": "Function call for the cost efficiency weight",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:CostEfficiencyWeight"
+    }
+  },
+
+
+
+  "plato:DeliveryTimeCost":
+  {
+    "class": "plato:Cost",
+    "rdfs:label": "GeneralCost",
+    "rdfs:comment": "The deliver time cost.",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:TotalCost",
+      "plato:hasCostEquation": "plato:DeliveryTimeCostEquation"
+    }
+  },
+
+  "plato:DeliveryTimeCostEquation":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "DeliveryTimeCostEquation",
+    "rdfs:comment": "Root node of the cost equation for the delivery time cost",
+    "objectProperties":
+    {
+      "plato:representsOperator": "plato:MultiplicationOperator",
+      "plato:hasSubpartA": "plato:DeliveryTimeCostWeightFunctionCallNode",
+      "plato:hasSubpartB": "plato:DeliveryTimeCostValueNode"
+    }
+  },
+
+  "plato:DeliveryTimeCostValueNode":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "DeliveryTimeCostValueNode",
+    "rdfs:comment": "CostEquationPart representing the function call for the deliver time cost base value",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:DeliveryTimeCostFunctionCall"
+    }
+  },
+
+
+  "plato:DeliveryTimeCostFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "DeliveryTimeCostFunctionCall",
+    "rdfs:comment": "Deliver Time Cost Value Function Call",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:DeliveryDelayCost"
+    }
+  },
+
+
+  "plato:DeliveryTimeCostWeightFunctionCallNode":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "DeliveryTimeCostWeightFunctionCallNode",
+    "rdfs:comment": "CostEquationPart representing a function call to the delivery cost weight",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:DeliveryTimeCostWeightFunctionCall"
+
+    }
+  },
+
+  "plato:DeliveryTimeCostWeightFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "DeliveryTimeCostWeightFunctionCall",
+    "rdfs:comment": "Function call for the deliver cost weight",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:DeliveryTimeWeight"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "plato:pick-up-from-ground":
+  {
+    "class": "plato:Service",
+    "rdfs:label": "pick-up-from-ground",
+    "plato:hasPlanningName": "pick-up-from-ground",
+    "rdfs:comment": "Picks up a block from the ground",
+    "objectProperties":
+    {
+      "plato:hasParameter": "plato:ParameterBlock1",
+
+      "plato:hasPrecondition": [
+        "plato:TopClearBlock1StatementAtStart",
+        "plato:OnGroundBlock1StatementAtStart",
+        "plato:NotHoldingAnyBlock2AtStart"
+      ],
+
+      "plato:hasEffect": [
+        "plato:HoldingBlock1StatementAtEnd",
+        "plato:NotOnGroundBlock1StatementAtEnd"
+      ],
+
+      "plato:hasDuration": "plato:PickUpFromGroundDuration"
+    }
+  },
+
+  "plato:pick-up-from-block":
+  {
+    "class": "plato:Service",
+    "rdfs:label": "pick-up-from-block",
+    "plato:hasPlanningName": "pick-up-from-block",
+    "rdfs:comment": "Picks up a block from another block",
+    "objectProperties":
+    {
+      "plato:hasParameter": ["plato:ParameterBlock1", "plato:ParameterBlock2"],
+      "plato:hasEntityOrder": ["plato:ParameterBlock1ParameterOrder0", "plato:ParameterBlock2ParameterOrder1"],
+
+      "plato:hasPrecondition": [
+        "plato:TopClearBlock1StatementAtStart",
+        "plato:Block1OnBlock2StatementAtStart",
+        "plato:NotHoldingAnyBlock3AtStart"
+      ],
+
+      "plato:hasEffect": [
+        "plato:HoldingBlock1StatementAtEnd",
+        "plato:TopClearBlock2StatementAtEnd",
+        "plato:Block1NotOnBlock2StatementAtEnd"
+      ],
+
+      "plato:hasDuration": "plato:PickUpFromBlockDuration"
+    }
+  },
+
+  "plato:put-down-on-ground":
+  {
+    "class": "plato:Service",
+    "rdfs:label": "put-down-on-ground",
+    "plato:hasPlanningName": "put-down-on-ground",
+    "rdfs:comment": "Puts down the currently held block onto the ground",
+    "objectProperties":
+    {
+      "plato:hasParameter": "plato:ParameterBlock1",
+
+      "plato:hasPrecondition": "plato:HoldingBlock1StatementAtStart",
+
+      "plato:hasEffect": [
+        "plato:NotHoldingBlock1StatementAtEnd",
+        "plato:OnGroundBlock1StatementAtEnd"
+      ],
+      "plato:hasDuration": "plato:PutDownOnGroundDuration"
+    }
+  },
+
+  "plato:put-down-on-block":
+  {
+    "class": "plato:Service",
+    "rdfs:label": "put-down-on-block",
+    "plato:hasPlanningName": "put-down-on-block",
+    "rdfs:comment": "Puts down the currently held block onto the ground",
+    "objectProperties":
+    {
+      "plato:hasParameter": ["plato:ParameterBlock1", "plato:ParameterBlock2"],
+      "plato:hasEntityOrder": ["plato:ParameterBlock1ParameterOrder0", "plato:ParameterBlock2ParameterOrder1"],
+
+      "plato:hasPrecondition": [
+        "plato:HoldingBlock1StatementAtStart",
+        "plato:TopClearBlock2StatementAtStart"
+      ],
+
+      "plato:hasEffect": [
+        "plato:NotHoldingBlock1StatementAtEnd",
+        "plato:Block1OnBlock2StatementAtEnd",
+        "plato:TopNotClearBlock2StatementAtEnd"
+      ],
+      
+      "plato:hasDuration": "plato:PutDownOnBlockDuration"
+    }
+  }
+}

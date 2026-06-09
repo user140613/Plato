@@ -1,0 +1,139 @@
+{
+  "plato:EnergyCost":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "EnergyCost",
+    "plato:hasPlanningName": "EnergyCost",
+    "rdfs:comment": "A function that is used to track the energy cost",
+    "dataProperties":
+    {
+      "plato:hasStaticInitialValue": "0"
+    }
+  },
+
+  "plato:MaterialCost":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "MaterialCost",
+    "plato:hasPlanningName": "MaterialCost",
+    "rdfs:comment": "A function that is used to track the material cost",
+    "dataProperties":
+    {
+      "plato:hasStaticInitialValue": "0"
+    }
+  },
+
+  "plato:MachineUsage":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "MachineUsage",
+    "plato:hasPlanningName": "MachineUsage",
+    "rdfs:comment": "A function that is used to track the amount of minutes a machine was operated",
+    "objectProperties":
+    {
+      "plato:hasParameter": "plato:MachineParameter",
+      "plato:hasInitialValue": ["plato:MachineUsageInitialValuePrusaMK3001",
+                                "plato:MachineUsageInitialValuePrusaMK3002",
+                                "plato:MachineUsageInitialValueAnetA8v2"]
+    }
+  },
+
+  "plato:MachineUsageInitialValuePrusaMK3001":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "MachineUsageInitialValuePrusaMK3001",
+    "rdfs:comment": "Provides the initial value for the MachineUsage function with the parameter PrusaMK3001",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:PrusaMK3001"
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "0"
+    }
+  },
+
+  "plato:MachineUsageInitialValuePrusaMK3002":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "MachineUsageInitialValuePrusaMK3002",
+    "rdfs:comment": "Provides the initial value for the MachineUsage function with the parameter PrusaMK3002",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:PrusaMK3002"
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "0"
+    }
+  },
+
+  "plato:MachineUsageInitialValueAnetA8v2":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "MachineUsageInitialValueAnetA8v2",
+    "rdfs:comment": "Provides the initial value for the MachineUsage function with the parameter AnetA8v2",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:AnetA8v2"
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "0"
+    }
+  },
+
+  "plato:EnergyEfficiency":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "EnergyEfficiency",
+    "plato:hasPlanningName": "EnergyEfficiency",
+    "rdfs:comment": "A function that is used to state the energy efficiency of a machine",
+    "objectProperties":
+    {
+      "plato:hasParameter": "plato:MachineParameter",
+      "plato:hasInitialValue": ["plato:EnergyEfficiencyInitialValuePrusaMK3001",
+                                "plato:EnergyEfficiencyInitialValuePrusaMK3002",
+                                "plato:EnergyEfficiencyInitialValueAnetA8v2"]
+    }
+  },
+
+  "plato:EnergyEfficiencyInitialValuePrusaMK3001":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "EnergyEfficiencyInitialValuePrusaMK3001",
+    "rdfs:comment": "Provides the initial value for the EnergyEfficiency function with the parameter PrusaMK3001",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:PrusaMK3001"
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "1.0"
+    }
+  },
+
+  "plato:EnergyEfficiencyInitialValuePrusaMK3002":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "EnergyEfficiencyInitialValuePrusaMK3002",
+    "rdfs:comment": "Provides the initial value for the EnergyEfficiency function with the parameter PrusaMK3002",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:PrusaMK3002"
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "1.0"
+    }
+  },
+
+  "plato:EnergyEfficiencyInitialValueAnetA8v2":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "EnergyEfficiencyInitialValueAnetA8v2",
+    "rdfs:comment": "Provides the initial value for the EnergyEfficiency function with the parameter AnetA8v2",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:AnetA8v2"
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "1.2"
+    }
+  }
+}

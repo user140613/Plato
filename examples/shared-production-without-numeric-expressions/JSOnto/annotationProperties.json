@@ -1,0 +1,15 @@
+{
+  "plato:hasPlanningName":
+  {
+    "rdfs:label": "hasPlanningName",
+    "rdfs:comment": "Used to set a name that is used to represent the object in a planning domain",
+    "range": "xsd:string"
+  },
+
+  "plato:version":
+   {
+     "rdfs:label": "version",
+     "rdfs:comment": "Used to specify which version of Plato is used",
+     "range": "xsd:string"
+   }
+}

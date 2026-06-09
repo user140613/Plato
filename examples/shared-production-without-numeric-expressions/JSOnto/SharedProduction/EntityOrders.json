@@ -1,0 +1,560 @@
+{
+  "plato:EntityOrderFactoryParameter0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderFactoryParameter0",
+    "rdfs:comment": "Orders the FactoryParameter to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:FactoryParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderFactoryParameter1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderFactoryParameter1",
+    "rdfs:comment": "Orders the FactoryParameter to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:FactoryParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderWorkpieceParameter0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderWorkpieceParameter0",
+    "rdfs:comment": "Orders the WorkpieceParameter to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:WorkpieceParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderWorkpieceParameter1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderWorkpieceParameter1",
+    "rdfs:comment": "Orders the WorkpieceParameter to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:WorkpieceParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderPrinterParameter0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderPrinterParameter0",
+    "rdfs:comment": "Orders the PrinterParameter to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:PrinterParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderPrinterParameter1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderPrinterParameter1",
+    "rdfs:comment": "Orders the PrinterParameter to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:PrinterParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderPrinterParameter2":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderPrinterParameter2",
+    "rdfs:comment": "Orders the PrinterParameter to be the third parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:PrinterParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "2"
+    }
+  },
+
+  "plato:EntityOrderMaterialParameter1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderMaterialParameter1",
+    "rdfs:comment": "Orders the MaterialParameter to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:MaterialParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderMaterialParameter2":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderMaterialParameter2",
+    "rdfs:comment": "Orders the MaterialParameter to be the third parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:MaterialParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "2"
+    }
+  },
+
+  "plato:EntityOrderMaterialParameter3":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderMaterialParameter3",
+    "rdfs:comment": "Orders the MaterialParameter to be the fourth parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:MaterialParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "3"
+    }
+  },
+
+  "plato:EntityOrderMachineParameter0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderMachineParameter0",
+    "rdfs:comment": "Orders the MachineParameter to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:MachineParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderMachineParameter1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderMachineParameter1",
+    "rdfs:comment": "Orders the MachineParameter to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:MachineParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderMachineParameter2":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderMachineParameter2",
+    "rdfs:comment": "Orders the MachineParameter to be the third parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:MachineParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "2"
+    }
+  },
+
+  "plato:EntityOrderCameraParameter1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderCameraParameter1",
+    "rdfs:comment": "Orders the CameraParameter to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:CameraParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderCameraParameter2":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderCameraParameter2",
+    "rdfs:comment": "Orders the CameraParameter to be the third parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:CameraParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "2"
+    }
+  },
+
+  "plato:EntityOrderMachineParameter2_1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderMachineParameter2_1",
+    "rdfs:comment": "Orders the MachineParameter2 to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:MachineParameter2"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderMachineParameter2_2":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderMachineParameter2_2",
+    "rdfs:comment": "Orders the MachineParameter2 to be the third parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:MachineParameter2"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "2"
+    }
+  },
+
+  "plato:EntityOrderMachineParameter2_3":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderMachineParameter2_3",
+    "rdfs:comment": "Orders the MachineParameter2 to be the fourth parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:MachineParameter2"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "3"
+    }
+  },
+
+  "plato:EntityOrderRobotParameter0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderRobotParameter0",
+    "rdfs:comment": "Orders the RobotParameter to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:RobotParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderRobotParameter3":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderRobotParameter3",
+    "rdfs:comment": "Orders the RobotParameter to be the fourth parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:RobotParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "3"
+    }
+  },
+
+  "plato:EntityOrderRobotParameter4":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderRobotParameter4",
+    "rdfs:comment": "Orders the RobotParameter to be the fifth parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:RobotParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "4"
+    }
+  },
+
+
+  "plato:EntityOrderPrusaKL0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderPrusaKL0",
+    "rdfs:comment": "Orders the PrusaKL to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:PrusaKL"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderPrusaKL1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderPrusaKL1",
+    "rdfs:comment": "Orders the PrusaKL to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:PrusaKL"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderCameraKL0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderCameraKL0",
+    "rdfs:comment": "Orders the CameraKL to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:CameraKL"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderCameraKL1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderCameraKL1",
+    "rdfs:comment": "Orders the CameraKL to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:CameraKL"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderWarehouseKL0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderWarehouseKL0",
+    "rdfs:comment": "Orders the warehouse to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:WarehouseKL"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderWarehouseKL1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderWarehouseKL1",
+    "rdfs:comment": "Orders the warehouse to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:WarehouseKL"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+
+
+
+  "plato:EntityOrderPrusaLemgo0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderPrusaLemgo0",
+    "rdfs:comment": "Orders the PrusaLemgo to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:PrusaLemgo"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderPrusaLemgo1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderPrusaLemgo1",
+    "rdfs:comment": "Orders the PrusaLemgo to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:PrusaLemgo"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderCameraLemgo0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderCameraLemgo0",
+    "rdfs:comment": "Orders the CameraLemgo to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:CameraLemgo"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderCameraLemgo1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderCameraLemgo1",
+    "rdfs:comment": "Orders the CameraLemgo to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:CameraLemgo"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderWarehouseLemgo0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderWarehouseLemgo0",
+    "rdfs:comment": "Orders the warehouse to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:WarehouseLemgo"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderWarehouseLemgo1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderWarehouseLemgo1",
+    "rdfs:comment": "Orders the warehouse to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:WarehouseLemgo"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderWarehouseParameter0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderWarehouseParameter0",
+    "rdfs:comment": "Orders the warehouse to be the first parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:WarehouseParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:EntityOrderWarehouseParameter1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderWarehouseParameter1",
+    "rdfs:comment": "Orders the warehouse to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:WarehouseParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderWarehouseParameter2_1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderWarehouseParameter2_1",
+    "rdfs:comment": "Orders the warehouse2 to be the second parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:WarehouseParameter2"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:EntityOrderWarehouseParameter2_2":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "EntityOrderWarehouseParameter2_2",
+    "rdfs:comment": "Orders the warehouse2 to be the third parameter",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:WarehouseParameter2"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "2"
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "plato:hasMinimumValue":
+  {
+      "rdfs:label": "hasMinimumValue",
+      "rdfs:comment": "Used to set a minimum value for a NumericConstant or a NumericConstantReference",
+      "domain": ["plato:NumericConstant", "plato:NumericConstantReference"],
+      "range": "xsd:float"
+  },
+
+  "plato:hasMaximumValue":
+  {
+    "rdfs:label": "hasMaximumValue",
+    "rdfs:comment": "Used to set a maximum value for a NumericConstant or a NumericConstantReference",
+    "domain": ["plato:NumericConstant", "plato:NumericConstantReference"],
+    "range": "xsd:float"
+  },
+
+  "plato:hasDiscreteStepValue":
+  {
+    "rdfs:label": "hasDiscreteStepValue",
+    "rdfs:comment": "Used to set the step value for discretizing a numeric constant",
+    "domain": "plato:NumericConstant",
+    "range": "xsd:float"
+  },
+
+  "plato:isPlanningConstant":
+  {
+    "rdfs:label": "isPlanningConstant",
+    "rdfs:comment": "Used to state that an entity is a planning constant",
+    "domain": "plato:Entity",
+    "range": "xsd:boolean"
+  },
+
+  "plato:isPlanningObject":
+  {
+    "rdfs:label": "isPlanningObject",
+    "rdfs:comment": "Used to state that an entity is a planning object",
+    "domain": "plato:Entity",
+    "range": "xsd:boolean"
+  },
+
+  "plato:hasTimeScope":
+  {
+    "rdfs:label": "hasTimeScope",
+    "rdfs:comment": "Used to set a time scope (i.e. 'at start','at end',' over all') for a precondition or an effect",
+    "domain": "plato:Statement",
+    "range": "xsd:string"
+  },
+
+  "plato:isNegated":
+  {
+    "rdfs:label": "isNegated",
+    "rdfs:comment": "Used to state whether the AWSSentence of a Statement is negated or not",
+    "domain": "plato:Statement",
+    "range": "xsd:boolean"
+  },
+
+  "plato:isStatic":
+  {
+    "rdfs:label": "isStatic",
+    "rdfs:comment": "Used to state that a AWSSentence is not a precondition or effect but rather a general statement about the domain",
+    "domain": "plato:AWSSentence",
+    "range": "xsd:boolean"
+  },
+
+  "plato:hasOrderPosition":
+  {
+    "rdfs:label": "hasOrderPosition",
+    "rdfs:comment": "States the index of the entity ordered by a EntityOrder instance",
+    "domain": "plato:EntityOrder",
+    "range": "xsd:integer"
+  },
+
+  "plato:hasStaticValue":
+  {
+    "rdfs:label": "hasStaticValue",
+    "rdfs:comment": "States that an instance has a static numeric value associated with it",
+    "domain": ["plato:Cost", "plato:EquationValue", "plato:CostMapEntry", "plato:InitialFunctionValue"],
+    "range": "xsd:float"
+  },
+
+  "plato:hasLogicalOperator":
+  {
+    "rdfs:label": "hasLogicalOperator",
+    "rdfs:comment": "States that an advanced statement uses a specific logical operator to combine other statements.",
+    "domain": ["plato:AdvancedStatement"],
+    "range": "xsd:string"
+  },
+
+  "plato:decrease":
+  {
+    "rdfs:label": "decrease",
+    "rdfs:comment": "States that a cost should be applied to a cost function by decreasing it",
+    "domain": ["plato:Cost"],
+    "range": "xsd:boolean"
+  },
+
+  "plato:hasStaticInitialValue":
+  {
+    "rdfs:label": "hasStaticInitialValue",
+    "rdfs:comment": "States that a function without parameters has a static initial value",
+    "domain": "plato:Function",
+    "range": "xsd:float"
+  },
+
+  "plato:minimize":
+  {
+    "rdfs:label": "minimize",
+    "rdfs:comment": "States whether the metric should be minimized or maximized",
+    "domain": "plato:Metric",
+    "range": "xsd:boolean"
+  },
+
+  "plato:referencesValue":
+  {
+    "rdfs:label": "referencesValue",
+    "rdfs:comment": "States that a NumericConstantReference is directed at a single value and not a value range",
+    "domain": "plato:NumericConstantReference",
+    "range": "xsd:boolean"
+  },
+
+  "plato:hasOperatorValue":
+  {
+    "rdfs:label": "hasOperatorValue",
+    "rdfs:comment": "Defines which operator an EquationOperator instance resembles",
+    "domain": "plato:EquationOperator",
+    "range": "xsd:string"
+  }
+}

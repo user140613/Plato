@@ -1,0 +1,121 @@
+{
+  "plato:WorkpieceParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "WorkpieceParameter",
+    "plato:hasPlanningName": "Workpiece",
+    "rdfs:comment": "A workpiece that should be moved or processed",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Workpiece"
+    }
+  },
+
+  "plato:FactoryParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "FactoryParameter",
+    "plato:hasPlanningName": "Factory",
+    "rdfs:comment": "A parameter that sets a production factory",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Factory"
+    }
+  },
+
+  "plato:MachineParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "MachineParameter",
+    "plato:hasPlanningName": "Machine",
+    "rdfs:comment": "A parameter that sets a production machine",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Machine"
+    }
+  },
+
+  "plato:MachineParameter2":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "MachineParameter2",
+    "plato:hasPlanningName": "Machine2",
+    "rdfs:comment": "A parameter that sets a production machine",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Machine"
+    }
+  },
+
+  "plato:RobotParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "RobotParameter",
+    "plato:hasPlanningName": "Robot",
+    "rdfs:comment": "A parameter that sets a robot",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Robot"
+    }
+  },
+
+  "plato:PrinterParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "PrinterParameter",
+    "plato:hasPlanningName": "Machine",
+    "rdfs:comment": "A parameter that sets a 3D printer",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Printer"
+    }
+  },
+
+  "plato:CameraParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "CameraParameter",
+    "plato:hasPlanningName": "Camera",
+    "rdfs:comment": "A parameter that sets a camera",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Camera"
+    }
+  },
+
+  "plato:MaterialParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "MaterialParameter",
+    "plato:hasPlanningName": "Material",
+    "rdfs:comment": "A parameter that sets a material",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Material"
+    }
+  },
+
+  "plato:WarehouseParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "WarehouseParameter",
+    "plato:hasPlanningName": "Warehouse",
+    "rdfs:comment": "A parameter that sets a warehouse",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Warehouse"
+    }
+  },
+
+  "plato:WarehouseParameter2":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "WarehouseParameter2",
+    "plato:hasPlanningName": "Warehouse2",
+    "rdfs:comment": "A parameter that sets a warehouse",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Warehouse"
+    }
+  }
+}

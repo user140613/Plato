@@ -1,0 +1,39 @@
+{
+  "plato:PrintWorkpieceMachineUsageCost":
+  {
+    "class": "plato:Cost",
+    "rdfs:label": "PrintWorkpieceMachineUsageCost",
+    "rdfs:comment": "Machine usage cost for printing a workpiece",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:MachineUsage",
+      "plato:withParameter": "plato:3dPrinterParameter",
+      "plato:hasCostEquation": "plato:PrintWorkpieceMachineUsageCostEquation"
+
+    }
+  },
+
+  "plato:PrintWorkpieceMachineUsageCostEquation":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "PrintWorkpieceMachineUsageCostEquation",
+    "rdfs:comment": "Root node of the cost equation for the machine usage cost of the PrintWorkpiece service",
+    "objectProperties":
+    {
+      "plato:representsValue": "plato:EstimatedPrintTimeEquationValue"
+
+    }
+  },
+
+  "plato:EstimatedPrintTimeEquationValue":
+  {
+    "class": "plato:EquationValue",
+    "rdfs:label": "EstimatedPrintTimeEquationValue",
+    "rdfs:comment": "Estimated print time value for a cost equation",
+    "objectProperties":
+    {
+      "plato:referencesParameter": "plato:3DPrintingEstimatedPrintTime"
+
+    }
+  }
+}

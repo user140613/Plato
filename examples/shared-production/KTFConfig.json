@@ -1,0 +1,68 @@
+{
+  "consumerConfiguration": {
+    "consumer": "Plato",
+    "ontologyPath": "SharedProduction.owl"
+  },
+
+  "producerConfiguration":  {
+    "producer": "pddl",
+    "domainFilePath": "domain.pddl",
+    "problemFilePath": "problem.pddl"
+  },
+  
+  "domainType": "NON_TEMPORAL",
+
+  "removeNumericExpressions": false,
+
+  "initialState": [
+    ["=", "Distance", "WarehouseKL", "CustomerLocation", "85"],
+    ["=", "Distance", "CustomerLocation", "WarehouseKL", "85"],
+
+    ["=", "Distance", "WarehouseLemgo", "CustomerLocation", "285"],
+    ["=", "Distance", "CustomerLocation", "WarehouseLemgo", "285"],
+
+    ["CanPrint", "PrusaKL", "pla"],
+    ["CanPrint", "PrusaKL", "abs"],
+
+    ["CanPrint", "PrusaLemgo", "pla"],
+    ["CanPrint", "PrusaLemgo", "abs"],
+
+    ["IsReady", "PrusaKL"],
+    ["IsReady", "UR5eKL"],
+    ["IsReady", "CameraKL"],
+
+    ["IsReady", "PrusaLemgo"],
+    ["IsReady", "UR5eLemgo"],
+    ["IsReady", "CameraLemgo"],
+
+    ["IsAvailable", "SmartFactoryKL"],
+    ["IsAvailable", "SmartFactoryOWL"],
+
+    ["=","DeliveryDelayCost", "100"],
+
+    ["=","CO2Efficiency", "SmartFactoryKL","150"],
+    ["=","CO2Efficiency", "SmartFactoryOWL","100"],
+
+    ["=","CostEfficiency", "SmartFactoryKL","100"],
+    ["=","CostEfficiency", "SmartFactoryOWL","150"],
+
+    ["=", "CO2EfficiencyWeight", "1"],
+    ["=", "CostEfficiencyWeight", "1"],
+    ["=", "DeliveryTimeWeight", "1"],
+
+    ["=", "DeliveryCostWeight", "1"]
+
+  ],
+  "goalState": [
+    ["IsMadeOf","Workpiece1", "PLA"],
+    ["QualityChecked","Workpiece1"],
+    ["at","Workpiece1", "CustomerLocation"]
+  ],
+  "planningObjects": [["Workpiece1", "Workpiece"]],
+  "metric": "TotalCostMetric",
+
+  "domainName": "shared_production_domain",
+  "problemName": "shared_production_problem",
+
+  "printConfiguration": true
+}

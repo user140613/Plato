@@ -1,0 +1,135 @@
+{
+  "plato:Entity":
+  {
+    "rdfs:label": "Entity",
+    "rdfs:comment": "A superclass for all entities in the ontology to make modeling easier",
+    "subClasses": ["plato:Resource", "plato:Parameter", "plato:NumericConstant", "plato:NumericConstantReference", "plato:Statement", "plato:AdvancedStatement"]
+  },
+
+  "plato:Resource":
+  {
+    "rdfs:label": "Machine",
+    "rdfs:comment": "A machine in the production facility (e.g. a milling machine)"
+  },
+
+  "plato:Service":
+  {
+    "rdfs:label": "Service",
+    "rdfs:comment": "A service offered by a plato:Resource (e.g. milling a hole into a workpiece)"
+  },
+
+  "plato:Parameter":
+  {
+    "rdfs:label": "Parameter",
+    "rdfs:comment": "A parameter for a plato:Service (e.g. diameter of the hole that should be milled)"
+  },
+
+  "plato:NumericConstant":
+  {
+    "rdfs:label": "NumericConstant",
+    "rdfs:comment": "A numeric constant that is used to convert continues parameters (e.g. hole diameter) into discrete parameters"
+  },
+
+  "plato:NumericConstantReference":
+  {
+    "rdfs:label": "NumericConstantReference",
+    "rdfs:comment": "Used to reference a single value or a value range of an numeric constant"
+  },
+
+  "plato:Statement":
+  {
+    "rdfs:label": "Statement",
+    "rdfs:comment": "A statement describing a precondition or an effect",
+    "subClasses": "plato:AdvancedStatement"
+  },
+
+  "plato:AdvancedStatement":
+  {
+    "rdfs:label": "AdvancedStatement",
+    "rdfs:comment": "An advanced statement used to describe disjunctive, universal, or existential preconditions."
+  },
+
+  "plato:AWSSentence":
+  {
+    "rdfs:label": "AWSSentence",
+    "rdfs:comment": "A statement (Atomic World State Sentence) describing an atomic state"
+  },
+
+  "plato:Predicate":
+  {
+    "rdfs:label": "Predicate",
+    "rdfs:comment": "A predicate used for describing an atomic world state (e.g. 'at' -> workpiece1 at milling_machine)"
+  },
+
+  "plato:EntityOrder":
+  {
+    "rdfs:label": "EntityOrder",
+    "rdfs:comment": "Used to order entities, e.g. service parameters"
+  },
+
+  "plato:Type":
+  {
+    "rdfs:label": "Type",
+    "rdfs:comment": "A type, e.g. service type, machine type etc."
+  },
+
+  "plato:Cost":
+  {
+    "rdfs:label": "Cost",
+    "rdfs:comment": "Used to represent Costs that arise when executing a service"
+  },
+
+  "plato:Function":
+  {
+    "rdfs:label": "Function",
+    "rdfs:comment": "A numerical function used to store numerical values, i.e. a numeric fluent in PDDL"
+  },
+
+  "plato:InitialFunctionValue":
+  {
+    "rdfs:label": "InitialFunctionValue",
+    "rdfs:comment": "Used to store initial values for a function that has parameters and therefore can have more than one initial value"
+  },
+
+  "plato:CostEquationPart":
+  {
+    "rdfs:label": "CostEquationPart",
+    "rdfs:comment": "A part of a cost equation, e.g. an operator, value or function call"
+  },
+
+  "plato:EquationValue":
+  {
+    "rdfs:label": "EquationValue",
+    "rdfs:comment": "A value in an equation"
+  },
+
+  "plato:EquationOperator":
+  {
+    "rdfs:label": "EquationOperator",
+    "rdfs:comment": "An Operator in a cost equation, e.g. '+'"
+  },
+
+  "plato:FunctionCall":
+  {
+    "rdfs:label": "FunctionCall",
+    "rdfs:comment": "Used to represent function calls in cost equations"
+  },
+
+  "plato:CostMap":
+  {
+    "rdfs:label": "CostMap",
+    "rdfs:comment": "Used to map parameter values to numeric values so that non numeric parameters can effect a cost equation"
+  },
+
+  "plato:CostMapEntry":
+  {
+    "rdfs:label": "CostMapEntry",
+    "rdfs:comment": "An Entry to a plato:CostMap"
+  },
+
+  "plato:Metric":
+  {
+    "rdfs:label": "Metric",
+    "rdfs:comment": "Used to represent a planning metric by providing a cost equation that, for example, weights cost functions"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "plato:3dPrintingWorkpieceParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "3dPrintingWorkpieceParameter",
+    "plato:hasPlanningName": "Workpiece",
+    "rdfs:comment": "The workpiece that shall be printed",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:3DPrintingWorkpiece"
+    }
+  },
+
+  "plato:3DPrintingMaterialParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "3DPrintingMaterialParameter",
+    "plato:hasPlanningName": "Material",
+    "rdfs:comment": "The material used for a 3d print",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:3DPrintingMaterial"
+    }
+  },
+
+  "plato:3DPrintingHotbedParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "3DPrintingHotbedParameter",
+    "plato:hasPlanningName": "HotBedActivated",
+    "rdfs:comment": "Determines if the hotbed should be active during a 3d print",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Boolean"
+    }
+  },
+
+  "plato:3DPrintingNozzleTemperature":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "3DPrintingNozzleTemperature",
+    "plato:hasPlanningName": "NozzleTemperature",
+    "rdfs:comment": "Determines the temperature of the nozzle during a 3d print",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Temperature"
+    }
+  },
+
+  "plato:3DPrintingEstimatedPrintTime":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "3DPrintingEstimatedPrintTime",
+    "plato:hasPlanningName": "EstimatedPrintTime",
+    "rdfs:comment": "The expected time a 3d print will take",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Minutes"
+    }
+  },
+
+  "plato:3dPrinterParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "3dPrinterParameter",
+    "plato:hasPlanningName": "Printer",
+    "rdfs:comment": "A parameter that sets a 3d printer",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:3DPrinter"
+    }
+  },
+
+  "plato:MachineParameter":
+  {
+    "class": "plato:Parameter",
+    "rdfs:label": "MachineParameter",
+    "plato:hasPlanningName": "Machine",
+    "rdfs:comment": "A parameter that sets a production machine",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:ProductionMachine"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "plato:block": {
+    "class": "plato:Type",
+    "rdfs:label": "block",
+    "plato:hasPlanningName": "block",
+    "rdfs:comment": "A block in a Blocks-world planning domain"
+  }
+}

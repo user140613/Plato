@@ -1,0 +1,584 @@
+{
+  "plato:Block1OnBlock2":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "Block1OnBlock2",
+    "rdfs:comment": "States that block1 is placed on top of block2",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:ParameterBlock1",
+      "plato:hasAWSPredicate": "plato:On",
+      "plato:hasAWSObject": "plato:ParameterBlock2"
+    }
+  },
+
+  "plato:Block1Held":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "Block1Held",
+    "rdfs:comment": "States that block1 is currently being held",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:ParameterBlock1",
+      "plato:hasAWSPredicate": "plato:Holding"
+    }
+  },
+
+  "plato:Block2Held":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "Block2Held",
+    "rdfs:comment": "States that block2 is currently being held",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:ParameterBlock2",
+      "plato:hasAWSPredicate": "plato:Holding"
+    }
+  },
+
+  "plato:Block3Held":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "Block3Held",
+    "rdfs:comment": "States that block3 is currently being held",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:ParameterBlock3",
+      "plato:hasAWSPredicate": "plato:Holding"
+    }
+  },
+
+  "plato:Block1OnGround":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "Block1OnGround",
+    "rdfs:comment": "States that block1 is currently placed on the ground",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:ParameterBlock1",
+      "plato:hasAWSPredicate": "plato:OnGround"
+    }
+  },
+
+  "plato:Block1TopClear":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "Block1TopClear",
+    "rdfs:comment": "States that block1 has no other block on top",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:ParameterBlock1",
+      "plato:hasAWSPredicate": "plato:TopClear"
+    }
+  },
+
+  "plato:Block2TopClear":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "Block2TopClear",
+    "rdfs:comment": "States that block2 has no other block on top",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:ParameterBlock2",
+      "plato:hasAWSPredicate": "plato:TopClear"
+    }
+  },
+
+
+
+
+  "plato:TopClearBlock1StatementAtStart":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TopClearBlock1StatementAtStart",
+    "rdfs:comment": "States that block1 has no other block placed on top of it.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1TopClear"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:TopClearBlock1StatementAtEnd":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TopClearBlock1StatementAtEnd",
+    "rdfs:comment": "States that block1 has no other block placed on top of it.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1TopClear"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:TopClearBlock1StatementOverall":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TopClearBlock1StatementOverall",
+    "rdfs:comment": "States that block1 has no other block placed on top of it.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1TopClear"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "Overall"
+    }
+  },
+
+  "plato:TopClearBlock2StatementAtStart":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TopClearBlock2StatementAtStart",
+    "rdfs:comment": "States that block2 has no other block placed on top of it.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block2TopClear"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:TopClearBlock2StatementAtEnd":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TopClearBlock2StatementAtEnd",
+    "rdfs:comment": "States that block2 has no other block placed on top of it.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block2TopClear"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:TopClearBlock2StatementOverall":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TopClearBlock2StatementOverall",
+    "rdfs:comment": "States that block2 has no other block placed on top of it.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block2TopClear"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "Overall"
+    }
+  },
+
+  "plato:TopNotClearBlock2StatementAtStart":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TopNotClearBlock2StatementAtStart",
+    "rdfs:comment": "States that block2 has another block on top of it.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block2TopClear"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:TopNotClearBlock2StatementAtEnd":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TopNotClearBlock2StatementAtEnd",
+    "rdfs:comment": "States that block2 has another block on top of it.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block2TopClear"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:TopNotClearBlock2StatementOverall":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TopNotClearBlock2StatementOverall",
+    "rdfs:comment": "States that block2 has another block on top of it.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block2TopClear"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "Overall"
+    }
+  },
+
+  "plato:OnGroundBlock1StatementAtStart":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "OnGroundBlock1StatementAtStart",
+    "rdfs:comment": "States that block1 is placed on the ground.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1OnGround"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:OnGroundBlock1StatementAtEnd":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "OnGroundBlock1StatementAtEnd",
+    "rdfs:comment": "States that block1 is placed on the ground.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1OnGround"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:OnGroundBlock1StatementOverall":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "OnGroundBlock1StatementOverall",
+    "rdfs:comment": "States that block1 is placed on the ground.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1OnGround"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "Overall"
+    }
+  },
+
+  "plato:HoldingBlock1StatementAtStart":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "HoldingBlock1StatementAtStart",
+    "rdfs:comment": "States that block1 is currently being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1Held"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:HoldingBlock1StatementAtEnd":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "HoldingBlock1StatementAtEnd",
+    "rdfs:comment": "States that block1 is currently being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1Held"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:HoldingBlock1StatementOverall":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "HoldingBlock1StatementOverall",
+    "rdfs:comment": "States that block1 is currently being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1Held"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "Overall"
+    }
+  },
+
+  "plato:NotHoldingBlock1StatementAtStart":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "NotHoldingBlock1StatementAtStart",
+    "rdfs:comment": "States that block1 is currently not being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1Held"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:NotHoldingBlock1StatementOverall":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "NotHoldingBlock1StatementOverall",
+    "rdfs:comment": "States that block1 is currently not being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1Held"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "Overall"
+    }
+  },
+
+  "plato:NotHoldingBlock1StatementAtEnd":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "NotHoldingBlock1StatementAtEnd",
+    "rdfs:comment": "States that block1 is currently not being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1Held"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:HoldingBlock2StatementAtStart":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "HoldingBlock2StatementAtStart",
+    "rdfs:comment": "States that block2 is currently not being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block2Held"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:HoldingBlock2StatementAtEnd":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "HoldingBlock2StatementAtEnd",
+    "rdfs:comment": "States that block2 is currently not being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block2Held"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:HoldingBlock2StatementOverall":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "HoldingBlock2StatementOverall",
+    "rdfs:comment": "States that block2 is currently not being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block2Held"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "Overall"
+    }
+  },
+
+  "plato:HoldingBlock3StatementAtStart":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "HoldingBlock3StatementAtStart",
+    "rdfs:comment": "States that block1 is currently not being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block3Held"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:HoldingBlock3StatementAtEnd":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "HoldingBlock3StatementAtEnd",
+    "rdfs:comment": "States that block1 is currently not being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block3Held"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:HoldingBlock3StatementOverall":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "HoldingBlock3StatementOverall",
+    "rdfs:comment": "States that block1 is currently not being held.",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block3Held"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "Overall"
+    }
+  },
+
+  "plato:Block1NotOnBlock2StatementAtStart":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "Block1NotOnBlock2StatementAtStart",
+    "rdfs:comment": "States that block1 is currently not on top of block2",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1OnBlock2"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:Block1NotOnBlock2StatementAtEnd":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "Block1NotOnBlock2StatementAtEnd",
+    "rdfs:comment": "States that block1 is currently not on top of block2",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1OnBlock2"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:Block1NotOnBlock2StatementOverall":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "Block1NotOnBlock2StatementOverall",
+    "rdfs:comment": "States that block1 is currently not on top of block2",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1OnBlock2"
+    },
+    "dataProperties": {
+      "plato:isNegated": true,
+      "plato:hasTimeScope": "Overall"
+    }
+  },
+
+  "plato:Block1OnBlock2StatementAtStart":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "Block1OnBlock2StatementAtStart",
+    "rdfs:comment": "States that block1 is currently on top of block2",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1OnBlock2"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:Block1OnBlock2StatementOverall":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "Block1OnBlock2StatementOverall",
+    "rdfs:comment": "States that block1 is currently on top of block2",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1OnBlock2"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "Overall"
+    }
+  },
+
+  "plato:Block1OnBlock2StatementAtEnd":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "Block1OnBlock2StatementAtEnd",
+    "rdfs:comment": "States that block1 is currently on top of block2",
+    "objectProperties": {
+      "plato:hasAWSSentence": "plato:Block1OnBlock2"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:NotHoldingAnyBlock2AtStart":
+  {
+    "class": "plato:AdvancedStatement",
+    "rdfs:label": "NotHoldingAnyBlock2AtStart",
+    "rdfs:comment": "An advanced statement for a universal precondition that states that no block is being held",
+    "objectProperties": {
+      "plato:hasPrecondition": "plato:HoldingBlock2StatementAtStart",
+      "plato:hasParameter": "plato:ParameterBlock2"
+    },
+    "dataProperties": {
+      "plato:hasLogicalOperator": "forall",
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:NotHoldingAnyBlock2AtEnd":
+  {
+    "class": "plato:AdvancedStatement",
+    "rdfs:label": "NotHoldingAnyBlock2AtEnd",
+    "rdfs:comment": "An advanced statement for a universal precondition that states that no block is being held",
+    "objectProperties": {
+      "plato:hasPrecondition": "plato:HoldingBlock2StatementAtStart",
+      "plato:hasParameter": "plato:ParameterBlock2"
+    },
+    "dataProperties": {
+      "plato:hasLogicalOperator": "forall",
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:NotHoldingAnyBlock2Overall":
+  {
+    "class": "plato:AdvancedStatement",
+    "rdfs:label": "NotHoldingAnyBlock2Overall",
+    "rdfs:comment": "An advanced statement for a universal precondition that states that no block is being held",
+    "objectProperties": {
+      "plato:hasPrecondition": "plato:HoldingBlock2StatementAtStart",
+      "plato:hasParameter": "plato:ParameterBlock2"
+    },
+    "dataProperties": {
+      "plato:hasLogicalOperator": "forall",
+      "plato:hasTimeScope": "Overall"
+    }
+  },
+
+  "plato:NotHoldingAnyBlock3AtStart":
+  {
+    "class": "plato:AdvancedStatement",
+    "rdfs:label": "NotHoldingAnyBlock3AtStart",
+    "rdfs:comment": "An advanced statement for a universal precondition that states that no block is being held",
+    "objectProperties": {
+      "plato:hasPrecondition": "plato:HoldingBlock3StatementAtStart",
+      "plato:hasParameter": "plato:ParameterBlock3"
+    },
+    "dataProperties": {
+      "plato:hasLogicalOperator": "forall",
+      "plato:hasTimeScope": "AtStart"
+    }
+  },
+
+  "plato:NotHoldingAnyBlock3AtEnd":
+  {
+    "class": "plato:AdvancedStatement",
+    "rdfs:label": "NotHoldingAnyBlock3AtEnd",
+    "rdfs:comment": "An advanced statement for a universal precondition that states that no block is being held",
+    "objectProperties": {
+      "plato:hasPrecondition": "plato:HoldingBlock3StatementAtStart",
+      "plato:hasParameter": "plato:ParameterBlock3"
+    },
+    "dataProperties": {
+      "plato:hasLogicalOperator": "forall",
+      "plato:hasTimeScope": "AtEnd"
+    }
+  },
+
+  "plato:NotHoldingAnyBlock3Overall":
+  {
+    "class": "plato:AdvancedStatement",
+    "rdfs:label": "NotHoldingAnyBlock3Overall",
+    "rdfs:comment": "An advanced statement for a universal precondition that states that no block is being held",
+    "objectProperties": {
+      "plato:hasPrecondition": "plato:HoldingBlock3StatementAtStart",
+      "plato:hasParameter": "plato:ParameterBlock3"
+    },
+    "dataProperties": {
+      "plato:hasLogicalOperator": "forall",
+      "plato:hasTimeScope": "Overall"
+    }
+  }
+}

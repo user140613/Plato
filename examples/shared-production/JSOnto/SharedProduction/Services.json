@@ -1,0 +1,171 @@
+{
+  "plato:PrintWorkpiece":
+  {
+    "class": "plato:Service",
+    "rdfs:label": "PrintWorkpiece",
+    "plato:hasPlanningName": "Print_Workpiece",
+    "rdfs:comment": "A service that prints a workpiece using a 3d printer",
+    "objectProperties":
+    {
+      "plato:hasParameter": [
+        "plato:FactoryParameter",
+        "plato:WorkpieceParameter",
+        "plato:PrinterParameter",
+        "plato:MaterialParameter"],
+
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderFactoryParameter0",
+        "plato:EntityOrderWorkpieceParameter1",
+        "plato:EntityOrderPrinterParameter2",
+        "plato:EntityOrderMaterialParameter3"],
+
+      "plato:hasPrecondition": [
+        "plato:PreconditionFactoryAvailable",
+        "plato:PrintWorkpiecePreconditionPrinterInFactory",
+        "plato:PrintWorkpiecePreconditionPrinterReady",
+        "plato:PrintWorkpiecePreconditionPrinterCanPrintMaterial",
+        "plato:PrintWorkpiecePreconditionWorkpieceNotPrinted"
+      ],
+
+      "plato:hasEffect": [
+        "plato:PrintWorkpieceEffectWorkpiecePrinted",
+        "plato:PrintWorkpieceEffectWorkpieceMaterial",
+        "plato:PrintWorkpieceEffectWorkpieceAtMachine"
+      ],
+
+      "plato:hasCost": [
+        "plato:CO2Cost",
+        "plato:GeneralCost"
+      ]
+    }
+  },
+
+  "plato:CheckWorkpieceQuality":
+  {
+    "class": "plato:Service",
+    "rdfs:label": "CheckWorkpieceQuality",
+    "plato:hasPlanningName": "Check_Workpiece_Quality",
+    "rdfs:comment": "A service that performs a quality check on a workpiece",
+    "objectProperties":
+    {
+      "plato:hasParameter": [
+        "plato:FactoryParameter",
+        "plato:WorkpieceParameter",
+        "plato:CameraParameter"
+      ],
+
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderFactoryParameter0",
+        "plato:EntityOrderWorkpieceParameter1",
+        "plato:EntityOrderCameraParameter2"
+      ],
+
+      "plato:hasPrecondition": [
+        "plato:PreconditionFactoryAvailable",
+        "plato:CheckWorkpieceQualityPreconditionCameraInFactory",
+        "plato:CheckWorkpieceQualityPreconditionCameraReady",
+        "plato:CheckWorkpieceQualityPreconditionWorkpieceAtCamera"
+      ],
+
+      "plato:hasEffect": [
+        "plato:CheckWorkpieceQualityEffectQualityChecked"
+      ],
+
+      "plato:hasCost": [
+        "plato:CO2Cost",
+        "plato:GeneralCost"
+      ]
+    }
+  },
+
+  "plato:TransportWorkpiece":
+  {
+    "class": "plato:Service",
+    "rdfs:label": "TransportWorkpiece",
+    "plato:hasPlanningName": "Transport_Workpiece",
+    "rdfs:comment": "A service that transport a workpiece from one  machine to another",
+    "objectProperties":
+    {
+      "plato:hasParameter": [
+        "plato:FactoryParameter",
+        "plato:WorkpieceParameter",
+        "plato:MachineParameter",
+        "plato:MachineParameter2",
+        "plato:RobotParameter"
+      ],
+
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderFactoryParameter0",
+        "plato:EntityOrderWorkpieceParameter1",
+        "plato:EntityOrderMachineParameter2",
+        "plato:EntityOrderMachineParameter2_3",
+        "plato:EntityOrderRobotParameter4"],
+
+      "plato:hasPrecondition": [
+        "plato:PreconditionFactoryAvailable",
+        "plato:TransportWorkpiecePreconditionRobotInFactory",
+        "plato:TransportWorkpiecePreconditionMachineInFactory",
+        "plato:TransportWorkpiecePreconditionMachine2InFactory",
+        "plato:TransportWorkpiecePreconditionRobotReady",
+        "plato:TransportWorkpiecePreconditionWorkpiecePrinted",
+        "plato:TransportWorkpiecePreconditionWorkpieceAtMachine",
+        "plato:TransportWorkpiecePreconditionCanTransportBetween"
+      ],
+
+      "plato:hasEffect": [
+        "plato:TransportWorkpieceEffectWorkpieceAtMachine2",
+        "plato:TransportWorkpieceEffectWorkpieceNotAtMachine"
+      ],
+
+      "plato:hasCost": [
+        "plato:CO2Cost",
+        "plato:GeneralCost"
+      ]
+    }
+  },
+
+  "plato:TransportWorkpieceBetweenWarehouses":
+  {
+    "class": "plato:Service",
+    "rdfs:label": "TransportWorkpieceBetweenWarehouses",
+    "plato:hasPlanningName": "Transport_Workpiece_Between_Warehouses",
+    "rdfs:comment": "A service that transport a workpiece from one warehouse to another",
+    "objectProperties":
+    {
+      "plato:hasParameter": [
+        "plato:WorkpieceParameter",
+        "plato:WarehouseParameter",
+        "plato:WarehouseParameter2"
+      ],
+
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderWorkpieceParameter0",
+        "plato:EntityOrderWarehouseParameter1",
+        "plato:EntityOrderWarehouseParameter2_2"],
+
+      "plato:hasPrecondition": [
+        "plato:TransportWorkpieceBetweenWarehousesPreconditionWorkpieceAtWarehouse"
+      ],
+
+      "plato:hasEffect": [
+        "plato:TransportWorkpieceBetweenWarehousesEffectWorkpieceNotAtWarehouse",
+        "plato:TransportWorkpieceBetweenWarehousesEffectWorkpieceAtWarehouse"
+      ],
+
+      "plato:hasCost": "plato:TransportWorkpieceBetweenWarehousesCost"
+    }
+  },
+
+  "plato:WaitForFactoryAvailability":
+  {
+    "class": "plato:Service",
+    "rdfs:label": "WaitForFactoryAvailability",
+    "plato:hasPlanningName": "Wait_For_Factory_Availability",
+    "rdfs:comment": "A service that waits till both factories are available",
+    "objectProperties":
+    {
+      "plato:hasEffect": "plato:EffectFactoriesAvailable",
+      "plato:hasCost": "plato:DeliveryTimeCost"
+    }
+  }
+}

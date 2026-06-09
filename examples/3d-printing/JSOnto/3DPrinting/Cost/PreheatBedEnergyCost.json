@@ -1,0 +1,15 @@
+{
+  "plato:PreheatBedEnergyCost":
+  {
+    "class": "plato:Cost",
+    "rdfs:label": "PreheatBedEnergyCost",
+    "rdfs:comment": "Energy cost for preheating the heated bed of a 3D-Printer",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:EnergyCost"
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "1.5"
+    }
+  }
+}

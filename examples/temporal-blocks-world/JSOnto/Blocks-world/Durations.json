@@ -1,0 +1,45 @@
+{
+    "plato:PickUpFromGroundDuration":
+    {
+        "class": "plato:Cost",
+        "rdfs:label": "PickUpFromGroundDuration",
+        "rdfs:comment": "The duration of the pick-up-from-ground action",
+        "dataProperties":
+        {
+            "plato:hasStaticValue": 5
+        }
+    },
+
+    "plato:PickUpFromBlockDuration":
+    {
+        "class": "plato:Cost",
+        "rdfs:label": "PickUpFromBlockDuration",
+        "rdfs:comment": "The duration of the pick-up-from-block action",
+        "dataProperties":
+        {
+            "plato:hasStaticValue": 10
+        }
+    },
+
+    "plato:PutDownOnGroundDuration":
+    {
+        "class": "plato:Cost",
+        "rdfs:label": "PutDownOnGroundDuration",
+        "rdfs:comment": "The duration of the put-down-on-ground action",
+        "dataProperties":
+        {
+            "plato:hasStaticValue": 5
+        }
+    },
+
+    "plato:PutDownOnBlockDuration":
+    {
+        "class": "plato:Cost",
+        "rdfs:label": "PutDownOnBlockDuration",
+        "rdfs:comment": "The duration of the put-down-on-block action",
+        "dataProperties":
+        {
+            "plato:hasStaticValue": 10
+        }
+    }
+}

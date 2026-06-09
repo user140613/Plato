@@ -1,0 +1,39 @@
+{
+  "consumerConfiguration": {
+    "consumer": "Plato",
+    "ontologyPath": "TemporalBlocksWorld.owl"
+  },
+
+  "producerConfiguration":  {
+    "producer": "pddl",
+    "domainFilePath": "domain.pddl",
+    "problemFilePath": "problem.pddl"
+  },
+  
+  "domainType": "TEMPORAL",
+
+  "planningObjects": [
+    ["a", "block"],
+    ["b", "block"],
+    ["c", "block"]
+  ],
+  "initialState": [
+    ["onground", "b"],
+    ["onground", "a"],
+    ["on", "c", "b"],
+    ["topClear", "c"],
+    ["topClear", "a"]
+  ],
+  "goalState": [
+    ["onground", "c"],
+    ["on", "b", "c"],
+    ["on", "a", "b"]
+  ],
+
+  "metric": "",
+
+  "domainName": "blocksworld_domain",
+  "problemName": "blocksworld_problem",
+
+  "printConfiguration": false
+}

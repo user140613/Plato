@@ -1,0 +1,52 @@
+{
+  "plato:PrintWorkpieceEnergyCost":
+  {
+    "class": "plato:Cost",
+    "rdfs:label": "PrintWorkpieceEnergyCost",
+    "rdfs:comment": "Energy cost for printing a workpiece",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:EnergyCost",
+      "plato:hasCostEquation": "plato:PrintWorkpieceEnergyCostEquation"
+
+    }
+  },
+
+  "plato:PrintWorkpieceEnergyCostEquation":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "PrintWorkpieceEnergyCostEquation",
+    "rdfs:comment": "Root node of the cost equation for the energy cost of the PrintWorkpiece service",
+    "objectProperties":
+    {
+      "plato:representsOperator": "plato:MultiplicationOperator",
+      "plato:hasSubpartA": "plato:EstimatedPrintTimeEquationPart",
+      "plato:hasSubpartB": "plato:EnergyEfficiencyEquationPart"
+
+    }
+  },
+
+  "plato:EnergyEfficiencyEquationPart":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "EnergyEfficiencyEquationPart",
+    "rdfs:comment": "Energy efficiency equation part for a cost equation",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:EnergyEfficiencyFunctionCall"
+
+    }
+  },
+
+  "plato:EnergyEfficiencyFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "EnergyEfficiencyFunctionCall",
+    "rdfs:comment": "EnergyEfficiency function call for a cost equation",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:EnergyEfficiency",
+      "plato:withParameter": "plato:3dPrinterParameter"
+    }
+  }
+}

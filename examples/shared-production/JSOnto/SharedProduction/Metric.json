@@ -1,0 +1,40 @@
+{
+"plato:TotalCostMetric":
+  {
+    "class": "plato:Metric",
+    "rdfs:label": "TotalCostMetric",
+    "rdfs:comment": "A metric that minimizes the total-cost function",
+    "plato:hasPlanningName": "TotalCostMetric",
+    "objectProperties":
+    {
+      "plato:hasCostEquation": "plato:TotalCostMetricEquation"
+    },
+
+    "dataProperties": {
+      "plato:minimize": true
+    }
+  },
+
+  "plato:TotalCostMetricEquation":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "TotalCostMetricEquation",
+    "rdfs:comment": "Root node of the cost equation for the total-cost metrin",
+    "objectProperties":
+    {
+      "plato:representsFunctionCall": "plato:TotalCostFunctionCall"
+
+    }
+  },
+
+  "plato:TotalCostFunctionCall":
+  {
+    "class": "plato:FunctionCall",
+    "rdfs:label": "TotalCostFunctionCall",
+    "rdfs:comment": "Function call for total-cost function",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:TotalCost"
+    }
+  }
+}

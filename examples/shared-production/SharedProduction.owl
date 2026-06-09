@@ -1,0 +1,3669 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dfki.de/ontologies/plato#"
+     xml:base="http://dfki.de/ontologies/plato"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:plato="http://dfki.de/ontologies/plato#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://dfki.de/ontologies/plato">
+        <terms:created>2024-28-04</terms:created>
+        <terms:title>An exemplary ontology showing of the shared production capabilities of Plato: The planning ontology</terms:title>
+        <version>1.0.0</version>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://dfki.de/ontologies/plato#version">
+        <rdfs:comment>Used to specify which version of Plato is used</rdfs:comment>
+        <rdfs:label>version</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasPlanningName -->
+
+
+    <owl:AnnotationProperty rdf:about="http://dfki.de/ontologies/plato#hasPlanningName">
+        <rdfs:comment>Used to set a name that is used to represent the object in a planning domain</rdfs:comment>
+        <rdfs:label>hasPlanningName</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/right -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/right"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasAWSObject -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasAWSObject">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:comment>References an object of the AWSSentence</rdfs:comment>
+        <rdfs:label>hasAWSObject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasAWSPredicate -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasAWSPredicate">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <rdfs:comment>References the predicate of an AWSSentence</rdfs:comment>
+        <rdfs:label>hasAWSPredicate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasAWSSentence -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasAWSSentence">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <rdfs:comment>States that a precondition or an effect has an AWSStatement</rdfs:comment>
+        <rdfs:label>hasAWSSentence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasAWSSubject -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasAWSSubject">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:comment>References the subject of an AWSSentence</rdfs:comment>
+        <rdfs:label>hasAWSSubject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasCost -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasCost">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <rdfs:comment>States that the execution of a service leads to some costs.</rdfs:comment>
+        <rdfs:label>hasCost</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasCostEquation -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasCostEquation">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Metric"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <rdfs:comment>Stated that a cost instance has an equation that determines the specific cost value. The cost instance can still have a static cost</rdfs:comment>
+        <rdfs:label>hasCostEquation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasCostMap -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasCostMap">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#EquationValue"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#CostMap"/>
+        <rdfs:comment>Used for an plato:EquationValue that is determined by a non numeric parameter to map the parameter values to numeric values</rdfs:comment>
+        <rdfs:label>hasCostMap</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasDuration -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasDuration">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <rdfs:comment>States that the execution of a service has a certain lead time.</rdfs:comment>
+        <rdfs:label>hasDuration</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasEffect -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasEffect">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <rdfs:comment>States that a service has an effect that changes the world state when the service is executed</rdfs:comment>
+        <rdfs:label>hasEffect</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasEntityOrder -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasEntityOrder">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#AdvancedStatement"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#InitialFunctionValue"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <rdfs:comment>States that an instance has a group of ordered objectProperties relating to entities</rdfs:comment>
+        <rdfs:label>hasEntityOrder</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasEntry -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasEntry">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#CostMap"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#CostMapEntry"/>
+        <rdfs:comment>Used to add an entry to a plato:CostMap</rdfs:comment>
+        <rdfs:label>hasEntry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasInitialValue -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasInitialValue">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#InitialFunctionValue"/>
+        <rdfs:comment>States than a function has a initial value for a specific set of parameter values</rdfs:comment>
+        <rdfs:label>hasInitialValue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasParameter -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasParameter">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <rdfs:comment>States that a service, a predicate, or a function has a parameter</rdfs:comment>
+        <rdfs:label>hasParameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasPrecondition -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasPrecondition">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#AdvancedStatement"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#AdvancedStatement"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <rdfs:comment>States that a service has a precondition that must be satisfied before the service can be executed</rdfs:comment>
+        <rdfs:label>hasPrecondition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasService -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasService">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:comment>Used to state that a machine offers a service that it can execute</rdfs:comment>
+        <rdfs:label>hasService</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasSubService -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasSubService">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:comment>States that a service has a another service that is its subtask</rdfs:comment>
+        <rdfs:label>hasSubService</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasSubType -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasSubType">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <rdfs:comment>States that a type has a direct sub-type</rdfs:comment>
+        <rdfs:label>hasSubType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasSubpartA -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasSubpartA">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <rdfs:comment>Used to reference the first child node of a Binary Expression Tree node describing an equation</rdfs:comment>
+        <rdfs:label>hasSubpartA</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasSubpartB -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasSubpartB">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <rdfs:comment>Used to reference the second child node of a Binary Expression Tree node describing an equation</rdfs:comment>
+        <rdfs:label>hasSubpartB</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasType -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#hasType">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <rdfs:comment>States that a service has a type</rdfs:comment>
+        <rdfs:label>hasType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#isAffectedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#isAffectedBy">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Binding"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <rdfs:comment>States that a precondition or effect binding is affected by a parameter</rdfs:comment>
+        <rdfs:label>isAffectedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#isProvidedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#isProvidedBy">
+        <owl:inverseOf rdf:resource="http://dfki.de/ontologies/plato#hasService"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <rdfs:comment>Used to state that a service is offered by a specific machine</rdfs:comment>
+        <rdfs:label>isProvidedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#onEntity -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#onEntity">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#CostMapEntry"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#InitialFunctionValue"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:comment>References a CostMapEntry or an InitialFunctionValue with an Entity</rdfs:comment>
+        <rdfs:label>onEntity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#ordersEntity -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#ordersEntity">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <rdfs:comment>References an entity or service (for subtask ordering) that is ordered by this instance of EntityOrder</rdfs:comment>
+        <rdfs:label>ordersEntity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#referencesNumericConstant -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#referencesNumericConstant">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#NumericConstantReference"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#NumericConstant"/>
+        <rdfs:comment>Used to reference a NumericConstant instance from a NumericConstantReference</rdfs:comment>
+        <rdfs:label>referencesNumericConstant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#referencesParameter -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#referencesParameter">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#EquationValue"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <rdfs:comment>States that an EquationValue is determined by a parameter</rdfs:comment>
+        <rdfs:label>referencesParameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#representsFunctionCall -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#representsFunctionCall">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <rdfs:comment>States that a CostEquationPart is a function call.</rdfs:comment>
+        <rdfs:label>representsFunctionCall</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#representsOperator -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#representsOperator">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#EquationOperator"/>
+        <rdfs:comment>States that a CostEquationPart is an operator.</rdfs:comment>
+        <rdfs:label>representsOperator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#representsValue -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#representsValue">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#EquationValue"/>
+        <rdfs:comment>States that a CostEquationPart is a value.</rdfs:comment>
+        <rdfs:label>representsValue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#targetsFunction -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#targetsFunction">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <rdfs:comment>States that some cost should be applied to a specific cost function</rdfs:comment>
+        <rdfs:label>targetsFunction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#withParameter -->
+
+
+    <owl:ObjectProperty rdf:about="http://dfki.de/ontologies/plato#withParameter">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <rdfs:range rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:comment>Used to specify parameters for a function call or the target function of a service cost</rdfs:comment>
+        <rdfs:label>withParameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#decrease -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#decrease">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>States that a cost should be applied to a cost function by decreasing it</rdfs:comment>
+        <rdfs:label>decrease</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasDiscreteStepValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#hasDiscreteStepValue">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#NumericConstant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Used to set the step value for discretizing a numeric constant</rdfs:comment>
+        <rdfs:label>hasDiscreteStepValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasLogicalOperator -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#hasLogicalOperator">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#AdvancedStatement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>States that an advanced statement uses a specific logical operator to combine other statements.</rdfs:comment>
+        <rdfs:label>hasLogicalOperator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasMaximumValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#hasMaximumValue">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#NumericConstant"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#NumericConstantReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Used to set a maximum value for a NumericConstant or a NumericConstantReference</rdfs:comment>
+        <rdfs:label>hasMaximumValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasMinimumValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#hasMinimumValue">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#NumericConstant"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#NumericConstantReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Used to set a minimum value for a NumericConstant or a NumericConstantReference</rdfs:comment>
+        <rdfs:label>hasMinimumValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasOperatorValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#hasOperatorValue">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#EquationOperator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Defines which operator an EquationOperator instance resembles</rdfs:comment>
+        <rdfs:label>hasOperatorValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasOrderPosition -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#hasOrderPosition">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>States the index of the entity ordered by a EntityOrder instance</rdfs:comment>
+        <rdfs:label>hasOrderPosition</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasStaticInitialValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#hasStaticInitialValue">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>States that a function without parameters has a static initial value</rdfs:comment>
+        <rdfs:label>hasStaticInitialValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasStaticValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#hasStaticValue">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#CostMapEntry"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#EquationValue"/>
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#InitialFunctionValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>States that an instance has a static numeric value associated with it</rdfs:comment>
+        <rdfs:label>hasStaticValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#hasTimeScope -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#hasTimeScope">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Used to set a time scope (i.e. &apos;at start&apos;,&apos;at end&apos;,&apos; over all&apos;) for a precondition or an effect</rdfs:comment>
+        <rdfs:label>hasTimeScope</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#isNegated -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#isNegated">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Used to state whether the AWSSentence of a Statement is negated or not</rdfs:comment>
+        <rdfs:label>isNegated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#isPlanningConstant -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#isPlanningConstant">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Used to state that an entity is a planning constant</rdfs:comment>
+        <rdfs:label>isPlanningConstant</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#isPlanningObject -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#isPlanningObject">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Used to state that an entity is a planning object</rdfs:comment>
+        <rdfs:label>isPlanningObject</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#isStatic -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#isStatic">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Used to state that a AWSSentence is not a precondition or effect but rather a general statement about the domain</rdfs:comment>
+        <rdfs:label>isStatic</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#minimize -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#minimize">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#Metric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>States whether the metric should be minimized or maximized</rdfs:comment>
+        <rdfs:label>minimize</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#referencesValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://dfki.de/ontologies/plato#referencesValue">
+        <rdfs:domain rdf:resource="http://dfki.de/ontologies/plato#NumericConstantReference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>States that a NumericConstantReference is directed at a single value and not a value range</rdfs:comment>
+        <rdfs:label>referencesValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#AWSSentence -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#AWSSentence">
+        <rdfs:comment>A statement (Atomic World State Sentence) describing an atomic state</rdfs:comment>
+        <rdfs:label>AWSSentence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#AdvancedStatement -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#AdvancedStatement">
+        <rdfs:subClassOf rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:subClassOf rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <rdfs:comment>An advanced statement used to describe disjunctive, universal, or existential preconditions.</rdfs:comment>
+        <rdfs:label>AdvancedStatement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Binding -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#Binding"/>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Cost -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#Cost">
+        <rdfs:comment>Used to represent Costs that arise when executing a service</rdfs:comment>
+        <rdfs:label>Cost</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CostEquationPart -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#CostEquationPart">
+        <rdfs:comment>A part of a cost equation, e.g. an operator, value or function call</rdfs:comment>
+        <rdfs:label>CostEquationPart</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CostMap -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#CostMap">
+        <rdfs:comment>Used to map parameter values to numeric values so that non numeric parameters can effect a cost equation</rdfs:comment>
+        <rdfs:label>CostMap</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CostMapEntry -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#CostMapEntry">
+        <rdfs:comment>An Entry to a plato:CostMap</rdfs:comment>
+        <rdfs:label>CostMapEntry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Entity -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#Entity">
+        <rdfs:comment>A superclass for all entities in the ontology to make modeling easier</rdfs:comment>
+        <rdfs:label>Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrder -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#EntityOrder">
+        <rdfs:comment>Used to order entities, e.g. service parameters</rdfs:comment>
+        <rdfs:label>EntityOrder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EquationOperator -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#EquationOperator">
+        <rdfs:comment>An Operator in a cost equation, e.g. &apos;+&apos;</rdfs:comment>
+        <rdfs:label>EquationOperator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EquationValue -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#EquationValue">
+        <rdfs:comment>A value in an equation</rdfs:comment>
+        <rdfs:label>EquationValue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Function -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#Function">
+        <rdfs:comment>A numerical function used to store numerical values, i.e. a numeric fluent in PDDL</rdfs:comment>
+        <rdfs:label>Function</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#FunctionCall -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#FunctionCall">
+        <rdfs:comment>Used to represent function calls in cost equations</rdfs:comment>
+        <rdfs:label>FunctionCall</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#InitialFunctionValue -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#InitialFunctionValue">
+        <rdfs:comment>Used to store initial values for a function that has parameters and therefore can have more than one initial value</rdfs:comment>
+        <rdfs:label>InitialFunctionValue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Metric -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#Metric">
+        <rdfs:comment>Used to represent a planning metric by providing a cost equation that, for example, weights cost functions</rdfs:comment>
+        <rdfs:label>Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#NumericConstant -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#NumericConstant">
+        <rdfs:subClassOf rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:comment>A numeric constant that is used to convert continues parameters (e.g. hole diameter) into discrete parameters</rdfs:comment>
+        <rdfs:label>NumericConstant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#NumericConstantReference -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#NumericConstantReference">
+        <rdfs:subClassOf rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:comment>Used to reference a single value or a value range of an numeric constant</rdfs:comment>
+        <rdfs:label>NumericConstantReference</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Parameter -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#Parameter">
+        <rdfs:subClassOf rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:comment>A parameter for a plato:Service (e.g. diameter of the hole that should be milled)</rdfs:comment>
+        <rdfs:label>Parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Predicate -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#Predicate">
+        <rdfs:comment>A predicate used for describing an atomic world state (e.g. &apos;at&apos; -&gt; workpiece1 at milling_machine)</rdfs:comment>
+        <rdfs:label>Predicate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Resource -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#Resource">
+        <rdfs:subClassOf rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:comment>A machine in the production facility (e.g. a milling machine)</rdfs:comment>
+        <rdfs:label>Machine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Service -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#Service">
+        <rdfs:comment>A service offered by a plato:Resource (e.g. milling a hole into a workpiece)</rdfs:comment>
+        <rdfs:label>Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Statement -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#Statement">
+        <rdfs:subClassOf rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <rdfs:comment>A statement describing a precondition or an effect</rdfs:comment>
+        <rdfs:label>Statement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Type -->
+
+
+    <owl:Class rdf:about="http://dfki.de/ontologies/plato#Type">
+        <rdfs:comment>A type, e.g. service type, machine type etc.</rdfs:comment>
+        <rdfs:label>Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#ABS -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#ABS">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Material"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>ABS</hasPlanningName>
+        <rdfs:comment>The Polylactic acid material</rdfs:comment>
+        <rdfs:label>ABS</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#AdditionOperator -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#AdditionOperator">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EquationOperator"/>
+        <hasOperatorValue>+</hasOperatorValue>
+        <rdfs:comment>The &apos;+&apos; operator</rdfs:comment>
+        <rdfs:label>AdditionOperator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#At -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#At">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderMachineParameter1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWorkpieceParameter0"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#MachineParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <hasPlanningName>At</hasPlanningName>
+        <rdfs:comment>Used to state that a workpiece is located at a specific machine</rdfs:comment>
+        <rdfs:label>At</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Boolean -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#Boolean">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <hasPlanningName>Boolean</hasPlanningName>
+        <rdfs:comment>A boolean value</rdfs:comment>
+        <rdfs:label>Boolean</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#C02EfficiencySmartFactoryKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#C02EfficiencySmartFactoryKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#InitialFunctionValue"/>
+        <onEntity rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryKL"/>
+        <hasStaticValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</hasStaticValue>
+        <rdfs:comment>Provides the C02 efficiency of executing a service in the SmartFactoryKL</rdfs:comment>
+        <rdfs:label>C02EfficiencySmartFactoryKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#C02EfficiencySmartFactoryOWL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#C02EfficiencySmartFactoryOWL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#InitialFunctionValue"/>
+        <onEntity rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryOWL"/>
+        <hasStaticValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</hasStaticValue>
+        <rdfs:comment>Provides the C02 efficiency of executing a service in the SmartFactoryOWL</rdfs:comment>
+        <rdfs:label>C02EfficiencySmartFactoryOWL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CO2Cost -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CO2Cost">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <hasCostEquation rdf:resource="http://dfki.de/ontologies/plato#CO2CostEquation"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#TotalCost"/>
+        <rdfs:comment>The CO2 cost for executing a service in a factory.</rdfs:comment>
+        <rdfs:label>CO2Cost</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CO2CostEquation -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CO2CostEquation">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <hasSubpartA rdf:resource="http://dfki.de/ontologies/plato#CO2CostEquationFunctionCall1"/>
+        <hasSubpartB rdf:resource="http://dfki.de/ontologies/plato#CO2CostEquationFunctionCall2"/>
+        <representsOperator rdf:resource="http://dfki.de/ontologies/plato#MultiplicationOperator"/>
+        <rdfs:comment>Root node of the cost equation for the CO2 cost</rdfs:comment>
+        <rdfs:label>CO2CostEquation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CO2CostEquationFunctionCall1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CO2CostEquationFunctionCall1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <representsFunctionCall rdf:resource="http://dfki.de/ontologies/plato#CO2EfficiencyFunctionCall"/>
+        <rdfs:comment>Function call node of the cost equation for the CO2 cost</rdfs:comment>
+        <rdfs:label>CO2CostEquationFunctionCall1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CO2CostEquationFunctionCall2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CO2CostEquationFunctionCall2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <representsFunctionCall rdf:resource="http://dfki.de/ontologies/plato#CO2EfficiencyWeightFunctionCall"/>
+        <rdfs:comment>Second function call node of the cost equation for the CO2 cost</rdfs:comment>
+        <rdfs:label>CO2CostEquationFunctionCall2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CO2Efficiency -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CO2Efficiency">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasPlanningName>CO2Efficiency</hasPlanningName>
+        <rdfs:comment>A function that is used to track the CO2 efficiency of different factories</rdfs:comment>
+        <rdfs:label>CO2Efficiency</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CO2EfficiencyFunctionCall -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CO2EfficiencyFunctionCall">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#CO2Efficiency"/>
+        <withParameter rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <rdfs:comment>Function call for the CO2 efficiency of a factory</rdfs:comment>
+        <rdfs:label>CO2EfficiencyFunctionCall</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CO2EfficiencyWeight -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CO2EfficiencyWeight">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <hasPlanningName>CO2EfficiencyWeight</hasPlanningName>
+        <rdfs:comment>A weight that determines the priority that the CO2 costs have.</rdfs:comment>
+        <rdfs:label>CO2EfficiencyWeight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CO2EfficiencyWeightFunctionCall -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CO2EfficiencyWeightFunctionCall">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#CO2EfficiencyWeight"/>
+        <rdfs:comment>Function call for the CO2 efficiency weight</rdfs:comment>
+        <rdfs:label>CO2EfficiencyWeightFunctionCall</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Camera -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#Camera">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <hasPlanningName>Camera</hasPlanningName>
+        <rdfs:comment>An camera in an production facility.</rdfs:comment>
+        <rdfs:label>Camera</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CameraInFactory -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CameraInFactory">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#CameraParameter"/>
+        <rdfs:comment>Requires or sets that CameraParameter is located in a factory</rdfs:comment>
+        <rdfs:label>CameraInFactory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CameraKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CameraKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Camera"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>CameraKL</hasPlanningName>
+        <rdfs:comment>The camera in Kaiserslautern</rdfs:comment>
+        <rdfs:label>CameraKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CameraKLInSmartFactoryKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CameraKLInSmartFactoryKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryKL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#CameraKL"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the CameraKL is located in the SMartFactoryKL</rdfs:comment>
+        <rdfs:label>CameraKLInSmartFactoryKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CameraLemgo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CameraLemgo">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Camera"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>CameraLemgo</hasPlanningName>
+        <rdfs:comment>The camera in Lemgo</rdfs:comment>
+        <rdfs:label>CameraLemgo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CameraLemgoInSmartFactoryOWL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CameraLemgoInSmartFactoryOWL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryOWL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#CameraLemgo"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the CameraLemgo is located in the SmartFactoryOWL</rdfs:comment>
+        <rdfs:label>CameraLemgoInSmartFactoryOWL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CameraParameter -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CameraParameter">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Camera"/>
+        <hasPlanningName>Camera</hasPlanningName>
+        <rdfs:comment>A parameter that sets a camera</rdfs:comment>
+        <rdfs:label>CameraParameter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CameraReady -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CameraReady">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#IsReady"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#CameraParameter"/>
+        <rdfs:comment>Requires or sets whether a camera is ready</rdfs:comment>
+        <rdfs:label>CameraReady</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CanPrint -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CanPrint">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderMaterialParameter1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderPrinterParameter0"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#MaterialParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#PrinterParameter"/>
+        <hasPlanningName>CanPrint</hasPlanningName>
+        <rdfs:comment>Used to state that a printer can print using a specific material</rdfs:comment>
+        <rdfs:label>CanPrint</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CanTransportBetween -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CanTransportBetween">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderMachineParameter1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderMachineParameter2_2"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderRobotParameter0"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#MachineParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#MachineParameter2"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#RobotParameter"/>
+        <hasPlanningName>CanTransportBetween</hasPlanningName>
+        <rdfs:comment>Used to state that a robot arm can transport a workpiece between two machines</rdfs:comment>
+        <rdfs:label>CanTransportBetween</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CheckWorkpieceQuality -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CheckWorkpieceQuality">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <hasCost rdf:resource="http://dfki.de/ontologies/plato#CO2Cost"/>
+        <hasCost rdf:resource="http://dfki.de/ontologies/plato#GeneralCost"/>
+        <hasEffect rdf:resource="http://dfki.de/ontologies/plato#CheckWorkpieceQualityEffectQualityChecked"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderCameraParameter2"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderFactoryParameter0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWorkpieceParameter1"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#CameraParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#CheckWorkpieceQualityPreconditionCameraInFactory"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#CheckWorkpieceQualityPreconditionCameraReady"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#CheckWorkpieceQualityPreconditionWorkpieceAtCamera"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#PreconditionFactoryAvailable"/>
+        <hasPlanningName>Check_Workpiece_Quality</hasPlanningName>
+        <rdfs:comment>A service that performs a quality check on a workpiece</rdfs:comment>
+        <rdfs:label>CheckWorkpieceQuality</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CheckWorkpieceQualityEffectQualityChecked -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CheckWorkpieceQualityEffectQualityChecked">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpieceQualityChecked"/>
+        <hasTimeScope>at end</hasTimeScope>
+        <rdfs:comment>Specifies that a quality check has been performed on a workpiece</rdfs:comment>
+        <rdfs:label>CheckWorkpieceQualityEffectQualityChecked</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CheckWorkpieceQualityPreconditionCameraInFactory -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CheckWorkpieceQualityPreconditionCameraInFactory">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#CameraInFactory"/>
+        <hasTimeScope>over all</hasTimeScope>
+        <rdfs:comment>Requires the camera to be in the specified factory</rdfs:comment>
+        <rdfs:label>CheckWorkpieceQualityPreconditionCameraInFactory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CheckWorkpieceQualityPreconditionCameraReady -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CheckWorkpieceQualityPreconditionCameraReady">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#CameraReady"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires the camera to be ready for a quality check</rdfs:comment>
+        <rdfs:label>CheckWorkpieceQualityPreconditionCameraReady</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CheckWorkpieceQualityPreconditionWorkpieceAtCamera -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CheckWorkpieceQualityPreconditionWorkpieceAtCamera">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpieceAtCamera"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires the workpiece to be located at the camera</rdfs:comment>
+        <rdfs:label>CheckWorkpieceQualityPreconditionWorkpieceAtCamera</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CostEfficiency -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CostEfficiency">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasPlanningName>CostEfficiency</hasPlanningName>
+        <rdfs:comment>A function that is used to track the cost efficiency of different factories</rdfs:comment>
+        <rdfs:label>CostEfficiency</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CostEfficiencyFunctionCall -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CostEfficiencyFunctionCall">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#CostEfficiency"/>
+        <withParameter rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <rdfs:comment>Function call for the cost efficiency of a factory</rdfs:comment>
+        <rdfs:label>CostEfficiencyFunctionCall</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CostEfficiencySmartFactoryKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CostEfficiencySmartFactoryKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#InitialFunctionValue"/>
+        <onEntity rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryKL"/>
+        <hasStaticValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</hasStaticValue>
+        <rdfs:comment>Provides the cost efficiency of executing a service in the SmartFactoryKL</rdfs:comment>
+        <rdfs:label>CostEfficiencySmartFactoryKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CostEfficiencySmartFactoryOWL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CostEfficiencySmartFactoryOWL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#InitialFunctionValue"/>
+        <onEntity rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryOWL"/>
+        <hasStaticValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</hasStaticValue>
+        <rdfs:comment>Provides the cost efficiency of executing a service in the SmartFactoryOWL</rdfs:comment>
+        <rdfs:label>CostEfficiencySmartFactoryOWL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CostEfficiencyWeight -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CostEfficiencyWeight">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <hasPlanningName>CostEfficiencyWeight</hasPlanningName>
+        <rdfs:comment>A weight that determines the priority that the general costs have.</rdfs:comment>
+        <rdfs:label>CostEfficiencyWeight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CostEfficiencyWeightFunctionCall -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CostEfficiencyWeightFunctionCall">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#CostEfficiencyWeight"/>
+        <rdfs:comment>Function call for the cost efficiency weight</rdfs:comment>
+        <rdfs:label>CostEfficiencyWeightFunctionCall</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#CustomerLocation -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#CustomerLocation">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Warehouse"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>CustomerLocation</hasPlanningName>
+        <rdfs:comment>The location of the customer</rdfs:comment>
+        <rdfs:label>CustomerLocation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DeliveryCostWeight -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DeliveryCostWeight">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <hasPlanningName>DeliveryCostWeight</hasPlanningName>
+        <rdfs:comment>A weight that determines the priority that the delivery costs have.</rdfs:comment>
+        <rdfs:label>DeliveryCostWeight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DeliveryCostWeightFunctionCall -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DeliveryCostWeightFunctionCall">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#DeliveryCostWeight"/>
+        <rdfs:comment>Function call for distance cost weight</rdfs:comment>
+        <rdfs:label>DistanceCostWeightFunctionCall</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DeliveryDelayCost -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DeliveryDelayCost">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <hasPlanningName>DeliveryDelayCost</hasPlanningName>
+        <rdfs:comment>A function that is used to specify the delivery delay base cost</rdfs:comment>
+        <rdfs:label>DeliveryDelayCost</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DeliveryTimeCost -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DeliveryTimeCost">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <hasCostEquation rdf:resource="http://dfki.de/ontologies/plato#DeliveryTimeCostEquation"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#TotalCost"/>
+        <rdfs:comment>The deliver time cost.</rdfs:comment>
+        <rdfs:label>GeneralCost</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DeliveryTimeCostEquation -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DeliveryTimeCostEquation">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <hasSubpartA rdf:resource="http://dfki.de/ontologies/plato#DeliveryTimeCostWeightFunctionCallNode"/>
+        <hasSubpartB rdf:resource="http://dfki.de/ontologies/plato#DeliveryTimeCostValueNode"/>
+        <representsOperator rdf:resource="http://dfki.de/ontologies/plato#MultiplicationOperator"/>
+        <rdfs:comment>Root node of the cost equation for the delivery time cost</rdfs:comment>
+        <rdfs:label>DeliveryTimeCostEquation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DeliveryTimeCostFunctionCall -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DeliveryTimeCostFunctionCall">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#DeliveryDelayCost"/>
+        <rdfs:comment>Deliver Time Cost Value Function Call</rdfs:comment>
+        <rdfs:label>DeliveryTimeCostFunctionCall</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DeliveryTimeCostValueNode -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DeliveryTimeCostValueNode">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <representsFunctionCall rdf:resource="http://dfki.de/ontologies/plato#DeliveryTimeCostFunctionCall"/>
+        <rdfs:comment>CostEquationPart representing the function call for the deliver time cost base value</rdfs:comment>
+        <rdfs:label>DeliveryTimeCostValueNode</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DeliveryTimeCostWeightFunctionCall -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DeliveryTimeCostWeightFunctionCall">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#DeliveryTimeWeight"/>
+        <rdfs:comment>Function call for the deliver cost weight</rdfs:comment>
+        <rdfs:label>DeliveryTimeCostWeightFunctionCall</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DeliveryTimeCostWeightFunctionCallNode -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DeliveryTimeCostWeightFunctionCallNode">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <representsFunctionCall rdf:resource="http://dfki.de/ontologies/plato#DeliveryTimeCostWeightFunctionCall"/>
+        <rdfs:comment>CostEquationPart representing a function call to the delivery cost weight</rdfs:comment>
+        <rdfs:label>DeliveryTimeCostWeightFunctionCallNode</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DeliveryTimeWeight -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DeliveryTimeWeight">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <hasPlanningName>DeliveryTimeWeight</hasPlanningName>
+        <rdfs:comment>A weight that determines the priority that the delivery time costs have.</rdfs:comment>
+        <rdfs:label>DeliveryTimeWeight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Distance -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#Distance">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter2_1"/>
+        <hasInitialValue rdf:resource="http://dfki.de/ontologies/plato#DistanceKLLemgo"/>
+        <hasInitialValue rdf:resource="http://dfki.de/ontologies/plato#DistanceLemgoKL"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter2"/>
+        <hasPlanningName>Distance</hasPlanningName>
+        <rdfs:comment>A function that is used to track the distance from the delivery location to the different factories</rdfs:comment>
+        <rdfs:label>Distance</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DistanceFunctionCall -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DistanceFunctionCall">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter2_1"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#Distance"/>
+        <withParameter rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter"/>
+        <withParameter rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter2"/>
+        <rdfs:comment>Function call for distances between warehouses</rdfs:comment>
+        <rdfs:label>DistanceFunctionCall</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DistanceKLLemgo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DistanceKLLemgo">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#InitialFunctionValue"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseKL0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseLemgo1"/>
+        <onEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseKL"/>
+        <onEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseLemgo"/>
+        <hasStaticValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</hasStaticValue>
+        <rdfs:comment>Provides the distance between KL and Lemgo</rdfs:comment>
+        <rdfs:label>DistanceKLLemgo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DistanceLemgoKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DistanceLemgoKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#InitialFunctionValue"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseKL1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseLemgo0"/>
+        <onEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseKL"/>
+        <onEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseLemgo"/>
+        <hasStaticValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</hasStaticValue>
+        <rdfs:comment>Provides the distance between Lemgo and KL</rdfs:comment>
+        <rdfs:label>DistanceLemgoKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#DivisionOperator -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#DivisionOperator">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EquationOperator"/>
+        <hasOperatorValue>/</hasOperatorValue>
+        <rdfs:comment>The &apos;/&apos; operator</rdfs:comment>
+        <rdfs:label>DivisionOperator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EffectConditionFactoryAvailable -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EffectConditionFactoryAvailable">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#FactoryAvailable"/>
+        <hasTimeScope>over all</hasTimeScope>
+        <rdfs:comment>An statement for an advanced effect that sets all factories to be available</rdfs:comment>
+        <rdfs:label>EffectConditionFactoriesAvailable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EffectFactoriesAvailable -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EffectFactoriesAvailable">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AdvancedStatement"/>
+        <hasEffect rdf:resource="http://dfki.de/ontologies/plato#EffectConditionFactoryAvailable"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasLogicalOperator>forall</hasLogicalOperator>
+        <hasTimeScope>at end</hasTimeScope>
+        <rdfs:comment>An advanced statement for an effect that sets all factories to be available</rdfs:comment>
+        <rdfs:label>EffectFactoriesAvailable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderCameraKL0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderCameraKL0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#CameraKL"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the CameraKL to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderCameraKL0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderCameraKL1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderCameraKL1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#CameraKL"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the CameraKL to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderCameraKL1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderCameraLemgo0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderCameraLemgo0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#CameraLemgo"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the CameraLemgo to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderCameraLemgo0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderCameraLemgo1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderCameraLemgo1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#CameraLemgo"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the CameraLemgo to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderCameraLemgo1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderCameraParameter1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderCameraParameter1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#CameraParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the CameraParameter to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderCameraParameter1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderCameraParameter2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderCameraParameter2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#CameraParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasOrderPosition>
+        <rdfs:comment>Orders the CameraParameter to be the third parameter</rdfs:comment>
+        <rdfs:label>EntityOrderCameraParameter2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderFactoryParameter0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderFactoryParameter0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the FactoryParameter to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderFactoryParameter0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderFactoryParameter1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderFactoryParameter1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the FactoryParameter to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderFactoryParameter1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderMachineParameter0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderMachineParameter0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#MachineParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the MachineParameter to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderMachineParameter0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderMachineParameter1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderMachineParameter1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#MachineParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the MachineParameter to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderMachineParameter1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderMachineParameter2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderMachineParameter2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#MachineParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasOrderPosition>
+        <rdfs:comment>Orders the MachineParameter to be the third parameter</rdfs:comment>
+        <rdfs:label>EntityOrderMachineParameter2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderMachineParameter2_1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderMachineParameter2_1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#MachineParameter2"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the MachineParameter2 to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderMachineParameter2_1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderMachineParameter2_2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderMachineParameter2_2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#MachineParameter2"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasOrderPosition>
+        <rdfs:comment>Orders the MachineParameter2 to be the third parameter</rdfs:comment>
+        <rdfs:label>EntityOrderMachineParameter2_2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderMachineParameter2_3 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderMachineParameter2_3">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#MachineParameter2"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasOrderPosition>
+        <rdfs:comment>Orders the MachineParameter2 to be the fourth parameter</rdfs:comment>
+        <rdfs:label>EntityOrderMachineParameter2_3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderMaterialParameter1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderMaterialParameter1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#MaterialParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the MaterialParameter to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderMaterialParameter1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderMaterialParameter2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderMaterialParameter2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#MaterialParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasOrderPosition>
+        <rdfs:comment>Orders the MaterialParameter to be the third parameter</rdfs:comment>
+        <rdfs:label>EntityOrderMaterialParameter2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderMaterialParameter3 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderMaterialParameter3">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#MaterialParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasOrderPosition>
+        <rdfs:comment>Orders the MaterialParameter to be the fourth parameter</rdfs:comment>
+        <rdfs:label>EntityOrderMaterialParameter3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderPrinterParameter0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderPrinterParameter0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#PrinterParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the PrinterParameter to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderPrinterParameter0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderPrinterParameter1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderPrinterParameter1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#PrinterParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the PrinterParameter to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderPrinterParameter1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderPrinterParameter2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderPrinterParameter2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#PrinterParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasOrderPosition>
+        <rdfs:comment>Orders the PrinterParameter to be the third parameter</rdfs:comment>
+        <rdfs:label>EntityOrderPrinterParameter2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderPrusaKL0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderPrusaKL0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#PrusaKL"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the PrusaKL to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderPrusaKL0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderPrusaKL1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderPrusaKL1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#PrusaKL"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the PrusaKL to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderPrusaKL1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderPrusaLemgo0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderPrusaLemgo0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#PrusaLemgo"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the PrusaLemgo to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderPrusaLemgo0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderPrusaLemgo1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderPrusaLemgo1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#PrusaLemgo"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the PrusaLemgo to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderPrusaLemgo1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderRobotParameter0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderRobotParameter0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#RobotParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the RobotParameter to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderRobotParameter0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderRobotParameter3 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderRobotParameter3">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#RobotParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasOrderPosition>
+        <rdfs:comment>Orders the RobotParameter to be the fourth parameter</rdfs:comment>
+        <rdfs:label>EntityOrderRobotParameter3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderRobotParameter4 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderRobotParameter4">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#RobotParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasOrderPosition>
+        <rdfs:comment>Orders the RobotParameter to be the fifth parameter</rdfs:comment>
+        <rdfs:label>EntityOrderRobotParameter4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderWarehouseKL0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderWarehouseKL0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseKL"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the warehouse to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderWarehouseKL0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderWarehouseKL1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderWarehouseKL1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseKL"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the warehouse to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderWarehouseKL1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderWarehouseLemgo0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderWarehouseLemgo0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseLemgo"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the warehouse to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderWarehouseLemgo0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderWarehouseLemgo1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderWarehouseLemgo1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseLemgo"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the warehouse to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderWarehouseLemgo1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the warehouse to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderWarehouseParameter0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the warehouse to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderWarehouseParameter1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter2_1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter2_1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter2"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the warehouse2 to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderWarehouseParameter2_1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter2_2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter2_2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter2"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasOrderPosition>
+        <rdfs:comment>Orders the warehouse2 to be the third parameter</rdfs:comment>
+        <rdfs:label>EntityOrderWarehouseParameter2_2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderWorkpieceParameter0 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderWorkpieceParameter0">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasOrderPosition>
+        <rdfs:comment>Orders the WorkpieceParameter to be the first parameter</rdfs:comment>
+        <rdfs:label>EntityOrderWorkpieceParameter0</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#EntityOrderWorkpieceParameter1 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#EntityOrderWorkpieceParameter1">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EntityOrder"/>
+        <ordersEntity rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <hasOrderPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasOrderPosition>
+        <rdfs:comment>Orders the WorkpieceParameter to be the second parameter</rdfs:comment>
+        <rdfs:label>EntityOrderWorkpieceParameter1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#ExponentialOperator -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#ExponentialOperator">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EquationOperator"/>
+        <hasOperatorValue>^</hasOperatorValue>
+        <rdfs:comment>The &apos;pow&apos; (exponential) operator</rdfs:comment>
+        <rdfs:label>ExponentialOperator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Factory -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#Factory">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <hasPlanningName>Factory</hasPlanningName>
+        <rdfs:comment>An factory.</rdfs:comment>
+        <rdfs:label>Factory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#FactoryAvailable -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#FactoryAvailable">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#IsAvailable"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <rdfs:comment>Requires or sets that factory is available</rdfs:comment>
+        <rdfs:label>FactoryAvailable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#FactoryParameter -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#FactoryParameter">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Factory"/>
+        <hasPlanningName>Factory</hasPlanningName>
+        <rdfs:comment>A parameter that sets a production factory</rdfs:comment>
+        <rdfs:label>FactoryParameter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#False -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#False">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Boolean"/>
+        <hasPlanningName>False</hasPlanningName>
+        <rdfs:comment>The Boolean Value of &apos;False&apos;</rdfs:comment>
+        <rdfs:label>False</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#GeneralCost -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#GeneralCost">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <hasCostEquation rdf:resource="http://dfki.de/ontologies/plato#GeneralCostEquation"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#TotalCost"/>
+        <rdfs:comment>The general cost for executing a service in a factory.</rdfs:comment>
+        <rdfs:label>GeneralCost</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#GeneralCostEquation -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#GeneralCostEquation">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <hasSubpartA rdf:resource="http://dfki.de/ontologies/plato#GeneralCostEquationFunctionCall"/>
+        <hasSubpartB rdf:resource="http://dfki.de/ontologies/plato#GeneralCostEquationFunctionCall2"/>
+        <representsOperator rdf:resource="http://dfki.de/ontologies/plato#MultiplicationOperator"/>
+        <rdfs:comment>Plus operator node of the cost equation for the general cost for running a service</rdfs:comment>
+        <rdfs:label>GeneralCostEquation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#GeneralCostEquationFunctionCall -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#GeneralCostEquationFunctionCall">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <representsFunctionCall rdf:resource="http://dfki.de/ontologies/plato#CostEfficiencyFunctionCall"/>
+        <rdfs:comment>CostEquationPart representing a function call to the general cost efficiency function</rdfs:comment>
+        <rdfs:label>GeneralCostEquationFunctionCall</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#GeneralCostEquationFunctionCall2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#GeneralCostEquationFunctionCall2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <representsFunctionCall rdf:resource="http://dfki.de/ontologies/plato#CostEfficiencyWeightFunctionCall"/>
+        <rdfs:comment>CostEquationPart representing a function call to the general cost efficiency weight</rdfs:comment>
+        <rdfs:label>GeneralCostEquationFunctionCall2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#InFactory -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#InFactory">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderFactoryParameter1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderMachineParameter0"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#MachineParameter"/>
+        <hasPlanningName>InFactory</hasPlanningName>
+        <rdfs:comment>Used to state that a machine is located in a specific factory</rdfs:comment>
+        <rdfs:label>InFactory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#IsAvailable -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#IsAvailable">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasPlanningName>IsAvailable</hasPlanningName>
+        <rdfs:comment>Used to state that a factory is available</rdfs:comment>
+        <rdfs:label>IsAvailable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#IsMadeOf -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#IsMadeOf">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderMaterialParameter1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWorkpieceParameter0"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#MaterialParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <hasPlanningName>IsMadeOf</hasPlanningName>
+        <rdfs:comment>Used to state that a workpiece is made of a specific material</rdfs:comment>
+        <rdfs:label>IsMadeOf</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#IsPrinted -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#IsPrinted">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <hasPlanningName>IsPrinted</hasPlanningName>
+        <rdfs:comment>Used to state that a workpiece has already been printed</rdfs:comment>
+        <rdfs:label>IsPrinted</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#IsReady -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#IsReady">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#MachineParameter"/>
+        <hasPlanningName>IsReady</hasPlanningName>
+        <rdfs:comment>Used to state that a machine is ready</rdfs:comment>
+        <rdfs:label>IsReady</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Machine -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#Machine">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <hasSubType rdf:resource="http://dfki.de/ontologies/plato#Camera"/>
+        <hasSubType rdf:resource="http://dfki.de/ontologies/plato#Printer"/>
+        <hasSubType rdf:resource="http://dfki.de/ontologies/plato#Robot"/>
+        <hasSubType rdf:resource="http://dfki.de/ontologies/plato#Warehouse"/>
+        <hasPlanningName>Machine</hasPlanningName>
+        <rdfs:comment>An machine in an production facility.</rdfs:comment>
+        <rdfs:label>Machine</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Machine2InFactory -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#Machine2InFactory">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#MachineParameter2"/>
+        <rdfs:comment>Requires or sets that MachineParameter2 is located in a factory</rdfs:comment>
+        <rdfs:label>Machine2InFactory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#MachineInFactory -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#MachineInFactory">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#MachineParameter"/>
+        <rdfs:comment>Requires or sets that MachineParameter is located in a factory</rdfs:comment>
+        <rdfs:label>MachineInFactory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#MachineParameter -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#MachineParameter">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Machine"/>
+        <hasPlanningName>Machine</hasPlanningName>
+        <rdfs:comment>A parameter that sets a production machine</rdfs:comment>
+        <rdfs:label>MachineParameter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#MachineParameter2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#MachineParameter2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Machine"/>
+        <hasPlanningName>Machine2</hasPlanningName>
+        <rdfs:comment>A parameter that sets a production machine</rdfs:comment>
+        <rdfs:label>MachineParameter2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Material -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#Material">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <hasPlanningName>Material</hasPlanningName>
+        <rdfs:comment>An material.</rdfs:comment>
+        <rdfs:label>Material</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#MaterialParameter -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#MaterialParameter">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Material"/>
+        <hasPlanningName>Material</hasPlanningName>
+        <rdfs:comment>A parameter that sets a material</rdfs:comment>
+        <rdfs:label>MaterialParameter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#MultiplicationOperator -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#MultiplicationOperator">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EquationOperator"/>
+        <hasOperatorValue>*</hasOperatorValue>
+        <rdfs:comment>The &apos;*&apos; operator</rdfs:comment>
+        <rdfs:label>MultiplicationOperator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PLA -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PLA">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Material"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>PLA</hasPlanningName>
+        <rdfs:comment>The Polylactic acid material</rdfs:comment>
+        <rdfs:label>PLA</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PreconditionFactoryAvailable -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PreconditionFactoryAvailable">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#FactoryAvailable"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires the factory to be available</rdfs:comment>
+        <rdfs:label>PreconditionFactoryAvailable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrintWorkpiece -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrintWorkpiece">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <hasCost rdf:resource="http://dfki.de/ontologies/plato#CO2Cost"/>
+        <hasCost rdf:resource="http://dfki.de/ontologies/plato#GeneralCost"/>
+        <hasEffect rdf:resource="http://dfki.de/ontologies/plato#PrintWorkpieceEffectWorkpieceAtMachine"/>
+        <hasEffect rdf:resource="http://dfki.de/ontologies/plato#PrintWorkpieceEffectWorkpieceMaterial"/>
+        <hasEffect rdf:resource="http://dfki.de/ontologies/plato#PrintWorkpieceEffectWorkpiecePrinted"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderFactoryParameter0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderMaterialParameter3"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderPrinterParameter2"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWorkpieceParameter1"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#MaterialParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#PrinterParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#PreconditionFactoryAvailable"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionPrinterCanPrintMaterial"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionPrinterInFactory"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionPrinterReady"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionWorkpieceNotPrinted"/>
+        <hasPlanningName>Print_Workpiece</hasPlanningName>
+        <rdfs:comment>A service that prints a workpiece using a 3d printer</rdfs:comment>
+        <rdfs:label>PrintWorkpiece</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrintWorkpieceEffectWorkpieceAtMachine -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrintWorkpieceEffectWorkpieceAtMachine">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpieceAtMachine"/>
+        <hasTimeScope>at end</hasTimeScope>
+        <rdfs:comment>Specifies that a workpiece is located at the machine that printed it</rdfs:comment>
+        <rdfs:label>PrintWorkpieceEffectWorkpieceAtMachine</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrintWorkpieceEffectWorkpieceMaterial -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrintWorkpieceEffectWorkpieceMaterial">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpieceIsMadeOfMaterial"/>
+        <hasTimeScope>at end</hasTimeScope>
+        <rdfs:comment>Specifies that a workpiece has been printed with a specific material</rdfs:comment>
+        <rdfs:label>PrintWorkpieceEffectWorkpieceMaterial</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrintWorkpieceEffectWorkpiecePrinted -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrintWorkpieceEffectWorkpiecePrinted">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpiecePrinted"/>
+        <hasTimeScope>at end</hasTimeScope>
+        <isNegated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isNegated>
+        <rdfs:comment>Specifies that a workpiece has been printed</rdfs:comment>
+        <rdfs:label>PrintWorkpieceEffectWorkpiecePrinted</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionPrinterCanPrintMaterial -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionPrinterCanPrintMaterial">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#PrinterCanPrintMaterial"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires the printer to be able to print a specific material</rdfs:comment>
+        <rdfs:label>PrintWorkpiecePreconditionPrinterCanPrintMaterial</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionPrinterInFactory -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionPrinterInFactory">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#MachineInFactory"/>
+        <hasTimeScope>over all</hasTimeScope>
+        <rdfs:comment>Requires the printer to be in the specified factory</rdfs:comment>
+        <rdfs:label>PrintWorkpiecePreconditionPrinterInFactory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionPrinterReady -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionPrinterReady">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#PrinterReady"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires the printer to be ready for printing</rdfs:comment>
+        <rdfs:label>PrintWorkpiecePreconditionPrinterReady</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionWorkpieceNotPrinted -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrintWorkpiecePreconditionWorkpieceNotPrinted">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpiecePrinted"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <isNegated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isNegated>
+        <rdfs:comment>Requires the workpiece to have not been already printed</rdfs:comment>
+        <rdfs:label>PrintWorkpiecePreconditionWorkpieceNotPrinted</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Printer -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#Printer">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <hasPlanningName>Printer</hasPlanningName>
+        <rdfs:comment>An 3D printer in an production facility.</rdfs:comment>
+        <rdfs:label>Printer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrinterCanPrintMaterial -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrinterCanPrintMaterial">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#MaterialParameter"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanPrint"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#PrinterParameter"/>
+        <rdfs:comment>Requires or sets whether a printer can print a material</rdfs:comment>
+        <rdfs:label>PrinterCanPrintMaterial</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrinterParameter -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrinterParameter">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Printer"/>
+        <hasPlanningName>Machine</hasPlanningName>
+        <rdfs:comment>A parameter that sets a 3D printer</rdfs:comment>
+        <rdfs:label>PrinterParameter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrinterReady -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrinterReady">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#IsReady"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#PrinterParameter"/>
+        <rdfs:comment>Requires or sets whether a printer is ready</rdfs:comment>
+        <rdfs:label>PrinterReady</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrusaKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrusaKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Printer"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>PrusaKL</hasPlanningName>
+        <rdfs:comment>The prusa 3D printer in Kaiserslautern</rdfs:comment>
+        <rdfs:label>PrusaKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrusaKLInSmartFactoryKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrusaKLInSmartFactoryKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryKL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#PrusaKL"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the PrusaKL is located in the SMartFactoryKL</rdfs:comment>
+        <rdfs:label>PrusaKLInSmartFactoryKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrusaLemgo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrusaLemgo">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Printer"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>PrusaLemgo</hasPlanningName>
+        <rdfs:comment>The prusa 3D printer in Lemgo</rdfs:comment>
+        <rdfs:label>PrusaLemgo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#PrusaLemgoInSmartFactoryOWL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#PrusaLemgoInSmartFactoryOWL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryOWL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#PrusaLemgo"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the PrusaKL is located in the SmartFactoryOWL</rdfs:comment>
+        <rdfs:label>PrusaLemgoInSmartFactoryOWL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#QualityChecked -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#QualityChecked">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Predicate"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <hasPlanningName>QualityChecked</hasPlanningName>
+        <rdfs:comment>Used to state that a workpiece has undergone a quality check</rdfs:comment>
+        <rdfs:label>QualityChecked</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Robot -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#Robot">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <hasPlanningName>Robot</hasPlanningName>
+        <rdfs:comment>An robot in an production facility.</rdfs:comment>
+        <rdfs:label>Robot</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#RobotCanTransportBetween -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#RobotCanTransportBetween">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#MachineParameter"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#MachineParameter2"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#RobotParameter"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderMachineParameter0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderMachineParameter2_1"/>
+        <rdfs:comment>Requires that a robot can transport between two machines</rdfs:comment>
+        <rdfs:label>RobotCanTransportBetween</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#RobotInFactory -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#RobotInFactory">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#RobotParameter"/>
+        <rdfs:comment>Requires or sets that RobotParameter is located in a factory</rdfs:comment>
+        <rdfs:label>RobotInFactory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#RobotParameter -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#RobotParameter">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Robot"/>
+        <hasPlanningName>Robot</hasPlanningName>
+        <rdfs:comment>A parameter that sets a robot</rdfs:comment>
+        <rdfs:label>RobotParameter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#RobotReady -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#RobotReady">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#IsReady"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#RobotParameter"/>
+        <rdfs:comment>Requires or sets whether a robot is ready</rdfs:comment>
+        <rdfs:label>RobotReady</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#SmartFactoryKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#SmartFactoryKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Factory"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>SmartFactoryKL</hasPlanningName>
+        <rdfs:comment>The SmartFactory in Kaiserslautern</rdfs:comment>
+        <rdfs:label>SmartFactoryKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#SmartFactoryOWL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#SmartFactoryOWL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Factory"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>SmartFactoryOWL</hasPlanningName>
+        <rdfs:comment>The SmartFactory in Lemgo</rdfs:comment>
+        <rdfs:label>SmartFactoryOWL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#SubtractionOperator -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#SubtractionOperator">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#EquationOperator"/>
+        <hasOperatorValue>-</hasOperatorValue>
+        <rdfs:comment>The &apos;-&apos; operator</rdfs:comment>
+        <rdfs:label>SubtractionOperator</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TotalCost -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TotalCost">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Function"/>
+        <hasStaticInitialValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasStaticInitialValue>
+        <hasPlanningName>total-cost</hasPlanningName>
+        <rdfs:comment>A function that is used to track the total cost of the plan</rdfs:comment>
+        <rdfs:label>TotalCost</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TotalCostFunctionCall -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TotalCostFunctionCall">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#FunctionCall"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#TotalCost"/>
+        <rdfs:comment>Function call for total-cost function</rdfs:comment>
+        <rdfs:label>TotalCostFunctionCall</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TotalCostMetric -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TotalCostMetric">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Metric"/>
+        <hasCostEquation rdf:resource="http://dfki.de/ontologies/plato#TotalCostMetricEquation"/>
+        <minimize rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</minimize>
+        <hasPlanningName>TotalCostMetric</hasPlanningName>
+        <rdfs:comment>A metric that minimizes the total-cost function</rdfs:comment>
+        <rdfs:label>TotalCostMetric</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TotalCostMetricEquation -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TotalCostMetricEquation">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <representsFunctionCall rdf:resource="http://dfki.de/ontologies/plato#TotalCostFunctionCall"/>
+        <rdfs:comment>Root node of the cost equation for the total-cost metrin</rdfs:comment>
+        <rdfs:label>TotalCostMetricEquation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpiece -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpiece">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <hasCost rdf:resource="http://dfki.de/ontologies/plato#CO2Cost"/>
+        <hasCost rdf:resource="http://dfki.de/ontologies/plato#GeneralCost"/>
+        <hasEffect rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpieceEffectWorkpieceAtMachine2"/>
+        <hasEffect rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpieceEffectWorkpieceNotAtMachine"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderFactoryParameter0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderMachineParameter2"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderMachineParameter2_3"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderRobotParameter4"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWorkpieceParameter1"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#FactoryParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#MachineParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#MachineParameter2"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#RobotParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#PreconditionFactoryAvailable"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionCanTransportBetween"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionMachine2InFactory"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionMachineInFactory"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionRobotInFactory"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionRobotReady"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionWorkpieceAtMachine"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionWorkpiecePrinted"/>
+        <hasPlanningName>Transport_Workpiece</hasPlanningName>
+        <rdfs:comment>A service that transport a workpiece from one  machine to another</rdfs:comment>
+        <rdfs:label>TransportWorkpiece</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehouses -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehouses">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <hasCost rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCost"/>
+        <hasEffect rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesEffectWorkpieceAtWarehouse"/>
+        <hasEffect rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesEffectWorkpieceNotAtWarehouse"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseParameter2_2"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWorkpieceParameter0"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter2"/>
+        <hasParameter rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <hasPrecondition rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesPreconditionWorkpieceAtWarehouse"/>
+        <hasPlanningName>Transport_Workpiece_Between_Warehouses</hasPlanningName>
+        <rdfs:comment>A service that transport a workpiece from one warehouse to another</rdfs:comment>
+        <rdfs:label>TransportWorkpieceBetweenWarehouses</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCost -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCost">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Cost"/>
+        <hasCostEquation rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCostCostEquation"/>
+        <targetsFunction rdf:resource="http://dfki.de/ontologies/plato#TotalCost"/>
+        <rdfs:comment>Transport Cost for transporting workpieces between warehouses</rdfs:comment>
+        <rdfs:label>TransportWorkpieceBetweenWarehousesCost</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCostCostEquation -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCostCostEquation">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <hasSubpartA rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCostEquationFunctionCall"/>
+        <hasSubpartB rdf:resource="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCostEquationFunctionCall2"/>
+        <representsOperator rdf:resource="http://dfki.de/ontologies/plato#MultiplicationOperator"/>
+        <rdfs:comment>Root node of the cost equation for the transport cost</rdfs:comment>
+        <rdfs:label>TransportWorkpieceBetweenWarehousesCostCostEquation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCostEquationFunctionCall -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCostEquationFunctionCall">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <representsFunctionCall rdf:resource="http://dfki.de/ontologies/plato#DeliveryCostWeightFunctionCall"/>
+        <rdfs:comment>Function call node of the cost equation for the transport cost</rdfs:comment>
+        <rdfs:label>TransportWorkpieceBetweenWarehousesCostEquationFunctionCall</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCostEquationFunctionCall2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesCostEquationFunctionCall2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#CostEquationPart"/>
+        <representsFunctionCall rdf:resource="http://dfki.de/ontologies/plato#DistanceFunctionCall"/>
+        <rdfs:comment>Function call node of the cost equation for the transport cost</rdfs:comment>
+        <rdfs:label>TransportWorkpieceBetweenWarehousesCostEquationFunctionCall2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesEffectWorkpieceAtWarehouse -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesEffectWorkpieceAtWarehouse">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpieceAtWarehouse2"/>
+        <hasTimeScope>at end</hasTimeScope>
+        <rdfs:comment>Specifies that a workpiece is at the destination warehouse</rdfs:comment>
+        <rdfs:label>TransportWorkpieceBetweenWarehousesEffectWorkpieceAtWarehouse</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesEffectWorkpieceNotAtWarehouse -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesEffectWorkpieceNotAtWarehouse">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpieceAtWarehouse"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <isNegated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isNegated>
+        <rdfs:comment>Specifies that a workpiece is no longer at the origin warehouse</rdfs:comment>
+        <rdfs:label>TransportWorkpieceBetweenWarehousesEffectWorkpieceNotAtWarehouse</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesPreconditionWorkpieceAtWarehouse -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpieceBetweenWarehousesPreconditionWorkpieceAtWarehouse">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpieceAtWarehouse"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires the workpiece to be located at the origin warehouse</rdfs:comment>
+        <rdfs:label>TransportWorkpieceBetweenWarehousesPreconditionWorkpieceAtWarehouse</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpieceEffectWorkpieceAtMachine2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpieceEffectWorkpieceAtMachine2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpieceAtMachine2"/>
+        <hasTimeScope>at end</hasTimeScope>
+        <rdfs:comment>Specifies that a workpiece is located at the second machine</rdfs:comment>
+        <rdfs:label>TransportWorkpieceEffectWorkpieceAtMachine2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpieceEffectWorkpieceNotAtMachine -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpieceEffectWorkpieceNotAtMachine">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpieceAtMachine"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <isNegated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isNegated>
+        <rdfs:comment>Specifies that a workpiece is no longer located at the first machine</rdfs:comment>
+        <rdfs:label>TransportWorkpieceEffectWorkpieceNotAtMachine</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionCanTransportBetween -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionCanTransportBetween">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#RobotCanTransportBetween"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires that the robot can transport between the two machines</rdfs:comment>
+        <rdfs:label>TransportWorkpiecePreconditionCanTransportBetween</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionMachine2InFactory -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionMachine2InFactory">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#Machine2InFactory"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires the second machine to be located in the specified factory</rdfs:comment>
+        <rdfs:label>TransportWorkpiecePreconditionMachine2InFactory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionMachineInFactory -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionMachineInFactory">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#MachineInFactory"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires the first machine to be located in the specified factory</rdfs:comment>
+        <rdfs:label>TransportWorkpiecePreconditionMachine1InFactory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionRobotInFactory -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionRobotInFactory">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#RobotInFactory"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires the robot to be located in the specified factory</rdfs:comment>
+        <rdfs:label>TransportWorkpiecePreconditionRobotInFactory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionRobotReady -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionRobotReady">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#RobotReady"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires the robot to be ready for transporting</rdfs:comment>
+        <rdfs:label>TransportWorkpiecePreconditionRobotReady</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionWorkpieceAtMachine -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionWorkpieceAtMachine">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpieceAtMachine"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires that a workpiece is located at the machine</rdfs:comment>
+        <rdfs:label>TransportWorkpiecePreconditionWorkpieceAtMachine</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionWorkpiecePrinted -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#TransportWorkpiecePreconditionWorkpiecePrinted">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Statement"/>
+        <hasAWSSentence rdf:resource="http://dfki.de/ontologies/plato#WorkpiecePrinted"/>
+        <hasTimeScope>at start</hasTimeScope>
+        <rdfs:comment>Requires the workpiece to have been already printed</rdfs:comment>
+        <rdfs:label>TransportWorkpiecePreconditionWorkpiecePrinted</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#True -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#True">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Entity"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Boolean"/>
+        <hasPlanningName>True</hasPlanningName>
+        <rdfs:comment>The Boolean Value of &apos;True&apos;</rdfs:comment>
+        <rdfs:label>True</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Robot"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>UR5eKL</hasPlanningName>
+        <rdfs:comment>The UR5e robot in Kaiserslautern</rdfs:comment>
+        <rdfs:label>UR5eKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eKLCanTransportCameraKLPrusaKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eKLCanTransportCameraKLPrusaKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#CameraKL"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#PrusaKL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eKL"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderCameraKL0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderPrusaKL1"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in KL can transport a workpiece between the printer and the camera</rdfs:comment>
+        <rdfs:label>UR5eKLCanTransportPrusaKLCameraKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eKLCanTransportCameraKLWarehouseKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eKLCanTransportCameraKLWarehouseKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#CameraKL"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#WarehouseKL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eKL"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderCameraKL0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseKL1"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in KL can transport a workpiece between the camera and the warehouse</rdfs:comment>
+        <rdfs:label>UR5eKLCanTransportCameraKLWarehouseKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eKLCanTransportPrusaKLCameraKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eKLCanTransportPrusaKLCameraKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#CameraKL"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#PrusaKL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eKL"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderCameraKL1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderPrusaKL0"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in KL can transport a workpiece between the printer and the camera</rdfs:comment>
+        <rdfs:label>UR5eKLCanTransportPrusaKLCameraKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eKLCanTransportPrusaKLWarehouseKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eKLCanTransportPrusaKLWarehouseKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#PrusaKL"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#WarehouseKL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eKL"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderPrusaKL0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseKL1"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in KL can transport a workpiece between the printer and the warehouse</rdfs:comment>
+        <rdfs:label>UR5eKLCanTransportPrusaKLWarehouseKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eKLCanTransportWarehouseKLCameraKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eKLCanTransportWarehouseKLCameraKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#CameraKL"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#WarehouseKL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eKL"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderCameraKL1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseKL0"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in KL can transport a workpiece between the warehouse and the camera</rdfs:comment>
+        <rdfs:label>UR5eKLCanTransportWarehouseKLCameraKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eKLCanTransportWarehouseKLPrusaKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eKLCanTransportWarehouseKLPrusaKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#PrusaKL"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#WarehouseKL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eKL"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderPrusaKL1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseKL0"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in KL can transport a workpiece between the warehouse and the printer</rdfs:comment>
+        <rdfs:label>UR5eKLCanTransportWarehouseKLPrusaKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eKLInSmartFactoryKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eKLInSmartFactoryKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryKL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eKL"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5eKL robot is located in the SMartFactoryKL</rdfs:comment>
+        <rdfs:label>UR5eKLInSmartFactoryKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eLemgo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eLemgo">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Robot"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>UR5eLemgo</hasPlanningName>
+        <rdfs:comment>The UR5e robot in Lemgo</rdfs:comment>
+        <rdfs:label>UR5eLemgo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eLemgoCanTransportCameraLemgoPrusaLemgo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eLemgoCanTransportCameraLemgoPrusaLemgo">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#CameraLemgo"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#PrusaLemgo"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eLemgo"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderCameraLemgo0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderPrusaLemgo1"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in Lemgo can transport a workpiece between the camera and the printer</rdfs:comment>
+        <rdfs:label>UR5eLemgoCanTransportPrusaLemgoCameraLemgo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eLemgoCanTransportCameraLemgoWarehouseLemgo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eLemgoCanTransportCameraLemgoWarehouseLemgo">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#CameraLemgo"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#WarehouseLemgo"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eLemgo"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderCameraLemgo0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseLemgo1"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in Lemgo can transport a workpiece between the camera and the warehouse</rdfs:comment>
+        <rdfs:label>UR5eLemgoCanTransportCameraLemgoWarehouseLemgo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eLemgoCanTransportPrusaLemgoCameraLemgo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eLemgoCanTransportPrusaLemgoCameraLemgo">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#CameraLemgo"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#PrusaLemgo"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eLemgo"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderCameraLemgo1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderPrusaLemgo0"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in Lemgo can transport a workpiece between the printer and the camera</rdfs:comment>
+        <rdfs:label>UR5eKLCanTransportPrusaKLCameraLemgo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eLemgoCanTransportPrusaLemgoWarehouseLemgo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eLemgoCanTransportPrusaLemgoWarehouseLemgo">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#PrusaLemgo"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#WarehouseLemgo"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eLemgo"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderPrusaLemgo0"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseLemgo1"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in Lemgo can transport a workpiece between the printer and the warehouse</rdfs:comment>
+        <rdfs:label>UR5eLemgoCanTransportPrusaLemgoWarehouseLemgo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eLemgoCanTransportWarehouseLemgoCameraLemgo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eLemgoCanTransportWarehouseLemgoCameraLemgo">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#CameraLemgo"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#WarehouseLemgo"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eLemgo"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderCameraLemgo1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseLemgo0"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in Lemgo can transport a workpiece between the warehouse and the camera</rdfs:comment>
+        <rdfs:label>UR5eLemgoCanTransportWarehouseLemgoCameraLemgo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eLemgoCanTransportWarehouseLemgoPrusaLemgo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eLemgoCanTransportWarehouseLemgoPrusaLemgo">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#PrusaLemgo"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#WarehouseLemgo"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#CanTransportBetween"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eLemgo"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderPrusaLemgo1"/>
+        <hasEntityOrder rdf:resource="http://dfki.de/ontologies/plato#EntityOrderWarehouseLemgo0"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5e robot in Lemgo can transport a workpiece between the warehouse and the printer</rdfs:comment>
+        <rdfs:label>UR5eLemgoCanTransportWarehouseLemgoPrusaLemgo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#UR5eLemgoInSmartFactoryOWL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#UR5eLemgoInSmartFactoryOWL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryOWL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#UR5eLemgo"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the UR5eLemgo robot is located in the SmartFactoryOWL</rdfs:comment>
+        <rdfs:label>UR5eLemgoInSmartFactoryOWL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WaitForFactoryAvailability -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WaitForFactoryAvailability">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Service"/>
+        <hasCost rdf:resource="http://dfki.de/ontologies/plato#DeliveryTimeCost"/>
+        <hasEffect rdf:resource="http://dfki.de/ontologies/plato#EffectFactoriesAvailable"/>
+        <hasPlanningName>Wait_For_Factory_Availability</hasPlanningName>
+        <rdfs:comment>A service that waits till both factories are available</rdfs:comment>
+        <rdfs:label>WaitForFactoryAvailability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Warehouse -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#Warehouse">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <hasPlanningName>Warehouse</hasPlanningName>
+        <rdfs:comment>An warehouse in an production facility.</rdfs:comment>
+        <rdfs:label>Warehouse</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WarehouseKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WarehouseKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Warehouse"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>WarehouseKL</hasPlanningName>
+        <rdfs:comment>The warehouse in KL</rdfs:comment>
+        <rdfs:label>WarehouseKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WarehouseKLInSmartFactoryKL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WarehouseKLInSmartFactoryKL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryKL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#WarehouseKL"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the WarehouseKL is located in the SmartFactoryKL</rdfs:comment>
+        <rdfs:label>WarehouseKLInSmartFactoryKL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WarehouseLemgo -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WarehouseLemgo">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Resource"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Warehouse"/>
+        <isPlanningConstant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPlanningConstant>
+        <hasPlanningName>WarehouseLemgo</hasPlanningName>
+        <rdfs:comment>The warehouse in Lemgo</rdfs:comment>
+        <rdfs:label>WarehouseLemgo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WarehouseLemgoInSmartFactoryOWL -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WarehouseLemgoInSmartFactoryOWL">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#SmartFactoryOWL"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#InFactory"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#WarehouseLemgo"/>
+        <isStatic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isStatic>
+        <rdfs:comment>Specifies that the WarehouseLemgo is located in the SmartFactoryOWL</rdfs:comment>
+        <rdfs:label>WarehouseLemgoInSmartFactoryOWL</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WarehouseParameter -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WarehouseParameter">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Warehouse"/>
+        <hasPlanningName>Warehouse</hasPlanningName>
+        <rdfs:comment>A parameter that sets a warehouse</rdfs:comment>
+        <rdfs:label>WarehouseParameter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WarehouseParameter2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WarehouseParameter2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Warehouse"/>
+        <hasPlanningName>Warehouse2</hasPlanningName>
+        <rdfs:comment>A parameter that sets a warehouse</rdfs:comment>
+        <rdfs:label>WarehouseParameter2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#Workpiece -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#Workpiece">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Type"/>
+        <hasPlanningName>Workpiece</hasPlanningName>
+        <rdfs:comment>An existing workpiece or a workpiece that shall be manufactured.</rdfs:comment>
+        <rdfs:label>Workpiece</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WorkpieceAtCamera -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WorkpieceAtCamera">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#CameraParameter"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#At"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <rdfs:comment>Requires or sets the location of a workpiece to be at CameraParameter</rdfs:comment>
+        <rdfs:label>WorkpieceAtCamera</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WorkpieceAtMachine -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WorkpieceAtMachine">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#MachineParameter"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#At"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <rdfs:comment>Requires or sets the location of a workpiece to be at MachineParameter</rdfs:comment>
+        <rdfs:label>WorkpieceAtMachine</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WorkpieceAtMachine2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WorkpieceAtMachine2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#MachineParameter2"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#At"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <rdfs:comment>Requires or sets the location of a workpiece to be at MachineParameter2</rdfs:comment>
+        <rdfs:label>WorkpieceAtMachine2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WorkpieceAtWarehouse -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WorkpieceAtWarehouse">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#At"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <rdfs:comment>Requires or sets the location of a workpiece to be at WarehouseParameter</rdfs:comment>
+        <rdfs:label>WorkpieceAtWarehouse</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WorkpieceAtWarehouse2 -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WorkpieceAtWarehouse2">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#WarehouseParameter2"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#At"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <rdfs:comment>Requires or sets the location of a workpiece to be at WarehouseParameter2</rdfs:comment>
+        <rdfs:label>WorkpieceAtWarehouse2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WorkpieceIsMadeOfMaterial -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WorkpieceIsMadeOfMaterial">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSObject rdf:resource="http://dfki.de/ontologies/plato#MaterialParameter"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#IsMadeOf"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <rdfs:comment>Requires or sets whether the material of a workpiece</rdfs:comment>
+        <rdfs:label>WorkpieceIsMadeOfMaterial</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WorkpieceParameter -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WorkpieceParameter">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#Parameter"/>
+        <hasType rdf:resource="http://dfki.de/ontologies/plato#Workpiece"/>
+        <hasPlanningName>Workpiece</hasPlanningName>
+        <rdfs:comment>A workpiece that should be moved or processed</rdfs:comment>
+        <rdfs:label>WorkpieceParameter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WorkpiecePrinted -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WorkpiecePrinted">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#IsPrinted"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <rdfs:comment>Requires or sets whether the workpiece has already been printed</rdfs:comment>
+        <rdfs:label>WorkpiecePrinted</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dfki.de/ontologies/plato#WorkpieceQualityChecked -->
+
+
+    <owl:NamedIndividual rdf:about="http://dfki.de/ontologies/plato#WorkpieceQualityChecked">
+        <rdf:type rdf:resource="http://dfki.de/ontologies/plato#AWSSentence"/>
+        <hasAWSPredicate rdf:resource="http://dfki.de/ontologies/plato#QualityChecked"/>
+        <hasAWSSubject rdf:resource="http://dfki.de/ontologies/plato#WorkpieceParameter"/>
+        <rdfs:comment>Requires or sets whether the workpiece has already undergone a quality check</rdfs:comment>
+        <rdfs:label>WorkpieceQualityChecked</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0) https://github.com/owlcs/owlapi/ -->
+
+

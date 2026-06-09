@@ -1,0 +1,69 @@
+{
+  "plato:Factory":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Factory",
+    "plato:hasPlanningName": "Factory",
+    "rdfs:comment": "An factory."
+  },
+
+  "plato:Machine":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Machine",
+    "plato:hasPlanningName": "Machine",
+    "rdfs:comment": "An machine in an production facility.",
+    "objectProperties": {
+      "plato:hasSubType": ["plato:Printer", "plato:Robot", "plato:Camera", "plato:Warehouse"]
+    }
+  },
+
+  "plato:Printer":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Printer",
+    "plato:hasPlanningName": "Printer",
+    "rdfs:comment": "An 3D printer in an production facility."
+  },
+
+  "plato:Robot":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Robot",
+    "plato:hasPlanningName": "Robot",
+    "rdfs:comment": "An robot in an production facility."
+  },
+
+  "plato:Camera":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Camera",
+    "plato:hasPlanningName": "Camera",
+    "rdfs:comment": "An camera in an production facility."
+  },
+
+  "plato:Warehouse":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Warehouse",
+    "plato:hasPlanningName": "Warehouse",
+    "rdfs:comment": "An warehouse in an production facility."
+  },
+
+
+  "plato:Material":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Material",
+    "plato:hasPlanningName": "Material",
+    "rdfs:comment": "An material."
+  },
+
+  "plato:Workpiece":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Workpiece",
+    "plato:hasPlanningName": "Workpiece",
+    "rdfs:comment": "An existing workpiece or a workpiece that shall be manufactured."
+  },
+}

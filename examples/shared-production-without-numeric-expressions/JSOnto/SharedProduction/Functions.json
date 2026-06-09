@@ -1,0 +1,184 @@
+{
+  "plato:Distance":
+  {
+  "class": "plato:Function",
+  "rdfs:label": "Distance",
+  "plato:hasPlanningName": "Distance",
+  "rdfs:comment": "A function that is used to track the distance from the delivery location to the different factories",
+    "objectProperties": {
+      "plato:hasParameter": ["plato:WarehouseParameter", "plato:WarehouseParameter2"],
+      "plato:hasEntityOrder": ["plato:EntityOrderWarehouseParameter0", "plato:EntityOrderWarehouseParameter2_1"],
+      "plato:hasInitialValue": ["plato:DistanceLemgoKL", "plato:DistanceKLLemgo"]
+    }
+  },
+
+  "plato:DistanceLemgoKL":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "DistanceLemgoKL",
+    "rdfs:comment": "Provides the distance between Lemgo and KL",
+    "objectProperties":
+    {
+      "plato:onEntity": [
+        "plato:WarehouseLemgo",
+        "plato:WarehouseKL"
+      ],
+      "plato:hasEntityOrder": ["plato:EntityOrderWarehouseLemgo0", "plato:EntityOrderWarehouseKL1"]
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "300"
+    }
+  },
+
+  "plato:DistanceKLLemgo":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "DistanceKLLemgo",
+    "rdfs:comment": "Provides the distance between KL and Lemgo",
+    "objectProperties":
+    {
+      "plato:onEntity": [
+        "plato:WarehouseKL",
+        "plato:WarehouseLemgo"
+      ],
+      "plato:hasEntityOrder": ["plato:EntityOrderWarehouseLemgo1", "plato:EntityOrderWarehouseKL0"]
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "300"
+    }
+  },
+
+  "plato:TotalCost":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "TotalCost",
+    "plato:hasPlanningName": "total-cost",
+    "rdfs:comment": "A function that is used to track the total cost of the plan",
+    "dataProperties": {
+      "plato:hasStaticInitialValue": 0
+    }
+  },
+
+  "plato:CostEfficiency":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "CostEfficiency",
+    "plato:hasPlanningName": "CostEfficiency",
+    "rdfs:comment": "A function that is used to track the cost efficiency of different factories",
+    "objectProperties": {
+      "plato:hasParameter": ["plato:FactoryParameter"],
+      "//plato:hasInitialValue": ["plato:CostEfficiencySmartFactoryKL", "plato:CostEfficiencySmartFactoryOWL"]
+    }
+  },
+
+  "plato:CostEfficiencySmartFactoryKL":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "CostEfficiencySmartFactoryKL",
+    "rdfs:comment": "Provides the cost efficiency of executing a service in the SmartFactoryKL",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:SmartFactoryKL"
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "100"
+    }
+  },
+
+  "plato:CostEfficiencySmartFactoryOWL":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "CostEfficiencySmartFactoryOWL",
+    "rdfs:comment": "Provides the cost efficiency of executing a service in the SmartFactoryOWL",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:SmartFactoryOWL"
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "150"
+    }
+  },
+
+  "plato:CO2Efficiency":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "CO2Efficiency",
+    "plato:hasPlanningName": "CO2Efficiency",
+    "rdfs:comment": "A function that is used to track the CO2 efficiency of different factories",
+    "objectProperties": {
+      "plato:hasParameter": ["plato:FactoryParameter"],
+      "//plato:hasInitialValue": ["plato:C02EfficiencySmartFactoryKL", "plato:C02EfficiencySmartFactoryOWL"]
+    }
+  },
+
+  "plato:C02EfficiencySmartFactoryKL":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "C02EfficiencySmartFactoryKL",
+    "rdfs:comment": "Provides the C02 efficiency of executing a service in the SmartFactoryKL",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:SmartFactoryKL"
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "150"
+    }
+  },
+
+  "plato:C02EfficiencySmartFactoryOWL":
+  {
+    "class": "plato:InitialFunctionValue",
+    "rdfs:label": "C02EfficiencySmartFactoryOWL",
+    "rdfs:comment": "Provides the C02 efficiency of executing a service in the SmartFactoryOWL",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:SmartFactoryOWL"
+    },
+    "dataProperties": {
+      "plato:hasStaticValue": "100"
+    }
+  },
+
+  "plato:DeliveryDelayCost":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "DeliveryDelayCost",
+    "plato:hasPlanningName": "DeliveryDelayCost",
+    "rdfs:comment": "A function that is used to specify the delivery delay base cost",
+    "objectProperties": {}
+  },
+
+
+  "plato:CO2EfficiencyWeight":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "CO2EfficiencyWeight",
+    "plato:hasPlanningName": "CO2EfficiencyWeight",
+    "rdfs:comment": "A weight that determines the priority that the CO2 costs have."
+  },
+
+  "plato:CostEfficiencyWeight":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "CostEfficiencyWeight",
+    "plato:hasPlanningName": "CostEfficiencyWeight",
+    "rdfs:comment": "A weight that determines the priority that the general costs have."
+  },
+
+  "plato:DeliveryTimeWeight":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "DeliveryTimeWeight",
+    "plato:hasPlanningName": "DeliveryTimeWeight",
+    "rdfs:comment": "A weight that determines the priority that the delivery time costs have."
+  },
+
+  "plato:DeliveryCostWeight":
+  {
+    "class": "plato:Function",
+    "rdfs:label": "DeliveryCostWeight",
+    "plato:hasPlanningName": "DeliveryCostWeight",
+    "rdfs:comment": "A weight that determines the priority that the delivery costs have."
+  }
+
+}

@@ -1,0 +1,61 @@
+{
+  "plato:PrintWorkpiece":
+  {
+    "class": "plato:Service",
+    "rdfs:label": "PrintWorkpiece",
+    "plato:hasPlanningName": "PrintWorkpiece",
+    "rdfs:comment": "A service that prints a workpiece using a 3d printer",
+    "objectProperties":
+    {
+      "plato:isProvidedBy":["plato:PrusaMK3001", "plato:PrusaMK3002","plato:AnetA8v2"],
+
+      "plato:hasType": "plato:3DPrintingService",
+
+      "plato:hasParameter": ["plato:3dPrintingWorkpieceParameter",
+                              "plato:3dPrinterParameter",
+                              "plato:3DPrintingMaterialParameter",
+                              "plato:3DPrintingNozzleTemperature",
+                              "plato:3DPrintingEstimatedPrintTime"],
+
+      "plato:hasEntityOrder": ["plato:PrintWorkpieceEntityOrder0",
+                                  "plato:PrintWorkpieceEntityOrder1",
+                                  "plato:PrintWorkpieceEntityOrder2",
+                                  "plato:PrintWorkpieceEntityOrder3",
+                                  "plato:PrintWorkpieceEntityOrder4"],
+
+      "plato:hasPrecondition": ["plato:PrintWorkpiecePreconditionHotbedHeated",
+                                "plato:PrintWorkpiecePreconditionCanReachNozzleTemperature",
+                                "plato:PrintWorkpiecePreconditionWorkpieceNotPrinted"],
+
+      "plato:hasEffect": ["plato:PrintWorkpieceEffectHotbedNotHeated",
+                          "plato:PrintWorkpieceEffectWorkpiecePrinted"],
+
+      "plato:hasCost": ["plato:PrintWorkpieceMachineUsageCost",
+                        "plato:PrintWorkpieceMaterialCost",
+                        "plato:PrintWorkpieceEnergyCost"]
+    },
+    "dataProperties":
+    {
+    }
+  },
+
+  "plato:PreheatBed":
+  {
+    "class": "plato:Service",
+    "rdfs:label": "PreheatBed",
+    "plato:hasPlanningName": "PreheatBed",
+    "rdfs:comment": "A service that preheats the heated bed of a 3d printer",
+    "objectProperties":
+    {
+      "plato:isProvidedBy":["plato:PrusaMK3001", "plato:PrusaMK3002","plato:AnetA8v2"],
+      "plato:hasType": "plato:3DPrintingService",
+      "plato:hasParameter": "plato:3dPrinterParameter",
+      "plato:hasPrecondition": "plato:PreheatBedPreconditionBedNotPreheated",
+      "plato:hasEffect": "plato:PreheatBedEffectBedIsPreheated",
+      "plato:hasCost": "plato:PreheatBedEnergyCost"
+    },
+    "dataProperties":
+    {
+    }
+  }
+}

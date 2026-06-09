@@ -1,0 +1,209 @@
+{
+  "plato:SmartFactoryKL":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "SmartFactoryKL",
+    "plato:hasPlanningName": "SmartFactoryKL",
+    "rdfs:comment": "The SmartFactory in Kaiserslautern",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Factory"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:SmartFactoryOWL":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "SmartFactoryOWL",
+    "plato:hasPlanningName": "SmartFactoryOWL",
+    "rdfs:comment": "The SmartFactory in Lemgo",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Factory"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:PrusaLemgo":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "PrusaLemgo",
+    "plato:hasPlanningName": "PrusaLemgo",
+    "rdfs:comment": "The prusa 3D printer in Lemgo",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Printer"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:PrusaKL":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "PrusaKL",
+    "plato:hasPlanningName": "PrusaKL",
+    "rdfs:comment": "The prusa 3D printer in Kaiserslautern",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Printer"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:UR5eLemgo":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "UR5eLemgo",
+    "plato:hasPlanningName": "UR5eLemgo",
+    "rdfs:comment": "The UR5e robot in Lemgo",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Robot"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:UR5eKL":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "UR5eKL",
+    "plato:hasPlanningName": "UR5eKL",
+    "rdfs:comment": "The UR5e robot in Kaiserslautern",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Robot"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:CameraLemgo":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "CameraLemgo",
+    "plato:hasPlanningName": "CameraLemgo",
+    "rdfs:comment": "The camera in Lemgo",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Camera"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:CameraKL":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "CameraKL",
+    "plato:hasPlanningName": "CameraKL",
+    "rdfs:comment": "The camera in Kaiserslautern",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Camera"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:PLA":
+  {
+    "class": "plato:Entity",
+    "rdfs:label": "PLA",
+    "plato:hasPlanningName": "PLA",
+    "rdfs:comment": "The Polylactic acid material",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Material"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:ABS":
+  {
+    "class": "plato:Entity",
+    "rdfs:label": "ABS",
+    "plato:hasPlanningName": "ABS",
+    "rdfs:comment": "The Polylactic acid material",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Material"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:WarehouseLemgo":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "WarehouseLemgo",
+    "plato:hasPlanningName": "WarehouseLemgo",
+    "rdfs:comment": "The warehouse in Lemgo",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Warehouse"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:WarehouseKL":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "WarehouseKL",
+    "plato:hasPlanningName": "WarehouseKL",
+    "rdfs:comment": "The warehouse in KL",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Warehouse"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:CustomerLocation":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "CustomerLocation",
+    "plato:hasPlanningName": "CustomerLocation",
+    "rdfs:comment": "The location of the customer",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Warehouse"
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  }
+}

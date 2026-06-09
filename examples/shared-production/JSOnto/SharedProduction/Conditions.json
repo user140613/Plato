@@ -1,0 +1,636 @@
+{
+  "plato:FactoryAvailable":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "FactoryAvailable",
+    "rdfs:comment": "Requires or sets that factory is available",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:FactoryParameter",
+      "plato:hasAWSPredicate": "plato:IsAvailable"
+    }
+  },
+
+  "plato:MachineInFactory":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "MachineInFactory",
+    "rdfs:comment": "Requires or sets that MachineParameter is located in a factory",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:MachineParameter",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:FactoryParameter"
+    }
+  },
+
+  "plato:Machine2InFactory":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "Machine2InFactory",
+    "rdfs:comment": "Requires or sets that MachineParameter2 is located in a factory",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:MachineParameter2",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:FactoryParameter"
+    }
+  },
+
+  "plato:RobotInFactory":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "RobotInFactory",
+    "rdfs:comment": "Requires or sets that RobotParameter is located in a factory",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:RobotParameter",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:FactoryParameter"
+    }
+  },
+
+  "plato:CameraInFactory":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "CameraInFactory",
+    "rdfs:comment": "Requires or sets that CameraParameter is located in a factory",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:CameraParameter",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:FactoryParameter"
+    }
+  },
+
+
+  "plato:WorkpieceAtMachine":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "WorkpieceAtMachine",
+    "rdfs:comment": "Requires or sets the location of a workpiece to be at MachineParameter",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:WorkpieceParameter",
+      "plato:hasAWSPredicate": "plato:At",
+      "plato:hasAWSObject": "plato:MachineParameter"
+    }
+  },
+
+  "plato:WorkpieceAtMachine2":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "WorkpieceAtMachine2",
+    "rdfs:comment": "Requires or sets the location of a workpiece to be at MachineParameter2",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:WorkpieceParameter",
+      "plato:hasAWSPredicate": "plato:At",
+      "plato:hasAWSObject": "plato:MachineParameter2"
+    }
+  },
+
+  "plato:WorkpieceAtWarehouse":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "WorkpieceAtWarehouse",
+    "rdfs:comment": "Requires or sets the location of a workpiece to be at WarehouseParameter",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:WorkpieceParameter",
+      "plato:hasAWSPredicate": "plato:At",
+      "plato:hasAWSObject": "plato:WarehouseParameter"
+    }
+  },
+
+  "plato:WorkpieceAtWarehouse2":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "WorkpieceAtWarehouse2",
+    "rdfs:comment": "Requires or sets the location of a workpiece to be at WarehouseParameter2",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:WorkpieceParameter",
+      "plato:hasAWSPredicate": "plato:At",
+      "plato:hasAWSObject": "plato:WarehouseParameter2"
+    }
+  },
+
+  "plato:WorkpieceAtCamera":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "WorkpieceAtCamera",
+    "rdfs:comment": "Requires or sets the location of a workpiece to be at CameraParameter",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:WorkpieceParameter",
+      "plato:hasAWSPredicate": "plato:At",
+      "plato:hasAWSObject": "plato:CameraParameter"
+    }
+  },
+
+  "plato:WorkpiecePrinted":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "WorkpiecePrinted",
+    "rdfs:comment": "Requires or sets whether the workpiece has already been printed",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:WorkpieceParameter",
+      "plato:hasAWSPredicate": "plato:IsPrinted"
+    }
+  },
+
+  "plato:PrinterReady":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "PrinterReady",
+    "rdfs:comment": "Requires or sets whether a printer is ready",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:PrinterParameter",
+      "plato:hasAWSPredicate": "plato:IsReady"
+    }
+  },
+
+  "plato:PrinterCanPrintMaterial":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "PrinterCanPrintMaterial",
+    "rdfs:comment": "Requires or sets whether a printer can print a material",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:PrinterParameter",
+      "plato:hasAWSPredicate": "plato:CanPrint",
+      "plato:hasAWSObject": "plato:MaterialParameter"
+    }
+  },
+
+  "plato:CameraReady":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "CameraReady",
+    "rdfs:comment": "Requires or sets whether a camera is ready",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:CameraParameter",
+      "plato:hasAWSPredicate": "plato:IsReady"
+    }
+  },
+
+  "plato:RobotReady":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "RobotReady",
+    "rdfs:comment": "Requires or sets whether a robot is ready",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:RobotParameter",
+      "plato:hasAWSPredicate": "plato:IsReady"
+    }
+  },
+
+  "plato:WorkpieceQualityChecked":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "WorkpieceQualityChecked",
+    "rdfs:comment": "Requires or sets whether the workpiece has already undergone a quality check",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:WorkpieceParameter",
+      "plato:hasAWSPredicate": "plato:QualityChecked"
+    }
+  },
+
+  "plato:WorkpieceIsMadeOfMaterial":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "WorkpieceIsMadeOfMaterial",
+    "rdfs:comment": "Requires or sets whether the material of a workpiece",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:WorkpieceParameter",
+      "plato:hasAWSPredicate": "plato:IsMadeOf",
+      "plato:hasAWSObject": "plato:MaterialParameter"
+    }
+  },
+
+  "plato:RobotCanTransportBetween":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "RobotCanTransportBetween",
+    "rdfs:comment": "Requires that a robot can transport between two machines",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:RobotParameter",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": ["plato:MachineParameter", "plato:MachineParameter2"],
+      "plato:hasEntityOrder": ["plato:EntityOrderMachineParameter0", "plato:EntityOrderMachineParameter2_1"]
+    }
+  },
+
+  "plato:PreconditionFactoryAvailable":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PreconditionFactoryAvailable",
+    "rdfs:comment": "Requires the factory to be available",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:FactoryAvailable"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+  "plato:PrintWorkpiecePreconditionPrinterInFactory":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpiecePreconditionPrinterInFactory",
+    "rdfs:comment": "Requires the printer to be in the specified factory",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:MachineInFactory"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "over all"
+    }
+  },
+
+  "plato:PrintWorkpiecePreconditionPrinterReady":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpiecePreconditionPrinterReady",
+    "rdfs:comment": "Requires the printer to be ready for printing",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:PrinterReady"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+  "plato:PrintWorkpiecePreconditionPrinterCanPrintMaterial":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpiecePreconditionPrinterCanPrintMaterial",
+    "rdfs:comment": "Requires the printer to be able to print a specific material",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:PrinterCanPrintMaterial"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+  "plato:PrintWorkpiecePreconditionWorkpieceNotPrinted":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpiecePreconditionWorkpieceNotPrinted",
+    "rdfs:comment": "Requires the workpiece to have not been already printed",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpiecePrinted"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start",
+      "plato:isNegated": true
+    }
+  },
+
+  "plato:PrintWorkpieceEffectWorkpiecePrinted":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpieceEffectWorkpiecePrinted",
+    "rdfs:comment": "Specifies that a workpiece has been printed",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpiecePrinted"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at end",
+      "plato:isNegated": false
+    }
+  },
+
+  "plato:PrintWorkpieceEffectWorkpieceMaterial":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpieceEffectWorkpieceMaterial",
+    "rdfs:comment": "Specifies that a workpiece has been printed with a specific material",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpieceIsMadeOfMaterial"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at end"
+    }
+  },
+
+  "plato:PrintWorkpieceEffectWorkpieceAtMachine":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpieceEffectWorkpieceAtMachine",
+    "rdfs:comment": "Specifies that a workpiece is located at the machine that printed it",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpieceAtMachine"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at end"
+    }
+  },
+
+
+
+
+  "plato:TransportWorkpiecePreconditionRobotReady":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpiecePreconditionRobotReady",
+    "rdfs:comment": "Requires the robot to be ready for transporting",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:RobotReady"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+  "plato:TransportWorkpiecePreconditionWorkpiecePrinted":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpiecePreconditionWorkpiecePrinted",
+    "rdfs:comment": "Requires the workpiece to have been already printed",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpiecePrinted"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+  "plato:TransportWorkpiecePreconditionWorkpieceAtMachine":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpiecePreconditionWorkpieceAtMachine",
+    "rdfs:comment": "Requires that a workpiece is located at the machine",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpieceAtMachine"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+  "plato:TransportWorkpiecePreconditionCanTransportBetween":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpiecePreconditionCanTransportBetween",
+    "rdfs:comment": "Requires that the robot can transport between the two machines",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:RobotCanTransportBetween"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+  "plato:TransportWorkpieceEffectWorkpieceAtMachine2":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpieceEffectWorkpieceAtMachine2",
+    "rdfs:comment": "Specifies that a workpiece is located at the second machine",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpieceAtMachine2"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at end"
+    }
+  },
+
+  "plato:TransportWorkpieceEffectWorkpieceNotAtMachine":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpieceEffectWorkpieceNotAtMachine",
+    "rdfs:comment": "Specifies that a workpiece is no longer located at the first machine",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpieceAtMachine"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start",
+      "plato:isNegated": true
+    }
+  },
+
+
+
+
+  "plato:CheckWorkpieceQualityPreconditionCameraInFactory":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "CheckWorkpieceQualityPreconditionCameraInFactory",
+    "rdfs:comment": "Requires the camera to be in the specified factory",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:CameraInFactory"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "over all"
+    }
+  },
+
+  "plato:CheckWorkpieceQualityPreconditionCameraReady":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "CheckWorkpieceQualityPreconditionCameraReady",
+    "rdfs:comment": "Requires the camera to be ready for a quality check",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:CameraReady"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+  "plato:CheckWorkpieceQualityPreconditionWorkpieceAtCamera":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "CheckWorkpieceQualityPreconditionWorkpieceAtCamera",
+    "rdfs:comment": "Requires the workpiece to be located at the camera",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpieceAtCamera"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+
+  "plato:CheckWorkpieceQualityEffectQualityChecked":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "CheckWorkpieceQualityEffectQualityChecked",
+    "rdfs:comment": "Specifies that a quality check has been performed on a workpiece",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpieceQualityChecked"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at end"
+    }
+  },
+
+
+
+
+  "plato:TransportWorkpiecePreconditionRobotInFactory":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpiecePreconditionRobotInFactory",
+    "rdfs:comment": "Requires the robot to be located in the specified factory",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:RobotInFactory"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+  "plato:TransportWorkpiecePreconditionMachineInFactory":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpiecePreconditionMachine1InFactory",
+    "rdfs:comment": "Requires the first machine to be located in the specified factory",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:MachineInFactory"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+  "plato:TransportWorkpiecePreconditionMachine2InFactory":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpiecePreconditionMachine2InFactory",
+    "rdfs:comment": "Requires the second machine to be located in the specified factory",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:Machine2InFactory"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+  "plato:TransportWorkpieceBetweenWarehousesPreconditionWorkpieceAtWarehouse":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpieceBetweenWarehousesPreconditionWorkpieceAtWarehouse",
+    "rdfs:comment": "Requires the workpiece to be located at the origin warehouse",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpieceAtWarehouse"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start"
+    }
+  },
+
+
+  "plato:TransportWorkpieceBetweenWarehousesEffectWorkpieceNotAtWarehouse":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpieceBetweenWarehousesEffectWorkpieceNotAtWarehouse",
+    "rdfs:comment": "Specifies that a workpiece is no longer at the origin warehouse",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpieceAtWarehouse"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start",
+      "plato:isNegated": true
+    }
+  },
+
+  "plato:TransportWorkpieceBetweenWarehousesEffectWorkpieceAtWarehouse":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "TransportWorkpieceBetweenWarehousesEffectWorkpieceAtWarehouse",
+    "rdfs:comment": "Specifies that a workpiece is at the destination warehouse",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:WorkpieceAtWarehouse2"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at end"
+    }
+  },
+
+
+  "plato:EffectFactoriesAvailable":
+  {
+    "class": "plato:AdvancedStatement",
+    "rdfs:label": "EffectFactoriesAvailable",
+    "rdfs:comment": "An advanced statement for an effect that sets all factories to be available",
+    "objectProperties": {
+      "plato:hasEffect": "plato:EffectConditionFactoryAvailable",
+      "plato:hasParameter": "plato:FactoryParameter"
+    },
+    "dataProperties": {
+      "plato:hasLogicalOperator": "forall",
+      "plato:hasTimeScope": "at end"
+    }
+  },
+
+  "plato:EffectConditionFactoryAvailable":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "EffectConditionFactoriesAvailable",
+    "rdfs:comment": "An statement for an advanced effect that sets all factories to be available",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:FactoryAvailable"
+    },
+    "dataProperties": {
+      "plato:hasTimeScope": "over all"
+    }
+  }
+}

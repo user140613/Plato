@@ -1,0 +1,97 @@
+{
+  "plato:Workpiece":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Workpiece",
+    "plato:hasPlanningName": "Workpiece",
+    "rdfs:comment": "An existing workpiece or a workpiece that shall be manufactured",
+    "objectProperties":
+    {
+      "plato:hasSubType": "plato:3DPrintingWorkpiece"
+    }
+  },
+
+  "plato:3DPrintingWorkpiece":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "3DPrintingWorkpiece",
+    "plato:hasPlanningName": "PrintingWorkpiece",
+    "rdfs:comment": "A 3d printed workpiece or a workpiece that shall be printed"
+  },
+
+  "plato:ProductionMachine":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "ProductionMachine",
+    "plato:hasPlanningName": "ProductionMachine",
+    "rdfs:comment": "A machine used for production",
+    "objectProperties":
+    {
+      "plato:hasSubType": "plato:3DPrinter"
+    }
+  },
+
+  "plato:3DPrinter":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "3DPrinter",
+    "plato:hasPlanningName": "Printer",
+    "rdfs:comment": "A 3D Printer"
+  },
+
+  "plato:ProductionService":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "ProductionService",
+    "plato:hasPlanningName": "ProductionService",
+    "rdfs:comment": "A production service",
+    "objectProperties":
+    {
+      "plato:hasSubType": "plato:3DPrintingService"
+    }
+  },
+
+  "plato:3DPrintingService":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "3DPrintingService",
+    "plato:hasPlanningName": "PrintingService",
+    "rdfs:comment": "A production service"
+  },
+
+  "plato:Material":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Material",
+    "plato:hasPlanningName": "Material",
+    "rdfs:comment": "A material used for production services",
+    "objectProperties":
+    {
+      "plato:hasSubType": "plato:3DPrintingMaterial"
+    }
+  },
+
+  "plato:3DPrintingMaterial":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "3DPrintingMaterial",
+    "plato:hasPlanningName": "PrintingMaterial",
+    "rdfs:comment": "A material used for 3D printing"
+  },
+
+  "plato:Temperature":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Temperature",
+    "plato:hasPlanningName": "Temperature",
+    "rdfs:comment": "A numeric value representing a temperature"
+  },
+
+  "plato:Minutes":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Minutes",
+    "plato:hasPlanningName": "Minutes",
+    "rdfs:comment": "A numeric value representing a nr. of minutes"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "plato:PrintWorkpieceMaterialCost":
+  {
+    "class": "plato:Cost",
+    "rdfs:label": "PrintWorkpieceMaterialCost",
+    "rdfs:comment": "Material cost for printing a workpiece",
+    "objectProperties":
+    {
+      "plato:targetsFunction": "plato:MaterialCost",
+      "plato:hasCostEquation": "plato:PrintWorkpieceMaterialCostEquation"
+
+    }
+  },
+
+  "plato:PrintWorkpieceMaterialCostEquation":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "PrintWorkpieceMaterialCostEquation",
+    "rdfs:comment": "Root node of the cost equation for the material cost of the PrintWorkpiece service",
+    "objectProperties":
+    {
+      "plato:representsOperator": "plato:MultiplicationOperator",
+      "plato:hasSubpartA": "plato:EstimatedPrintTimeEquationPart",
+      "plato:hasSubpartB": "plato:MaterialEquationPart"
+
+    }
+  },
+
+  "plato:EstimatedPrintTimeEquationPart":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "EstimatedPrintTimeEquationPart",
+    "rdfs:comment": "Estimated print time equation part for a cost equation",
+    "objectProperties":
+    {
+      "plato:representsValue": "plato:EstimatedPrintTimeEquationValue"
+
+    }
+  },
+
+  "plato:MaterialEquationPart":
+  {
+    "class": "plato:CostEquationPart",
+    "rdfs:label": "MaterialEquationPart",
+    "rdfs:comment": "Material equation part",
+    "objectProperties":
+    {
+      "plato:representsValue": "plato:MaterialEquationValue"
+
+    }
+  },
+
+  "plato:MaterialEquationValue":
+  {
+    "class": "plato:EquationValue",
+    "rdfs:label": "MaterialEquationValue",
+    "rdfs:comment": "Material values for a cost equation",
+    "objectProperties":
+    {
+      "plato:referencesParameter": "plato:3DPrintingMaterialParameter",
+      "plato:hasCostMap": "plato:MaterialEquationValueMap"
+
+    }
+  },
+
+  "plato:MaterialEquationValueMap": {
+    "class": "plato:CostMap",
+    "rdfs:label": "MaterialEquationValueMap",
+    "rdfs:comment": "The cost map for the material parameter",
+    "objectProperties":
+    {
+      "plato:hasEntry": ["plato:MaterialEquationValueABS", "plato:MaterialEquationValuePLA"]
+
+    }
+  },
+
+  "plato:MaterialEquationValueABS":
+  {
+    "class": "plato:CostMapEntry",
+    "rdfs:label": "MaterialEquationValueABS",
+    "rdfs:comment": "The cost map entry for the value ABS for the 3DPrintingMaterialParameter",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:AcrylonitrileButadieneStyrene"
+
+    },
+    "dataProperties":
+    {
+      "plato:hasStaticValue": "1.0"
+    }
+  },
+
+  "plato:MaterialEquationValuePLA":
+  {
+    "class": "plato:CostMapEntry",
+    "rdfs:label": "MaterialEquationValuePLA",
+    "rdfs:comment": "The cost map entry for the value PLA for the 3DPrintingMaterialParameter",
+    "objectProperties":
+    {
+      "plato:onEntity": "plato:PolylacticAcid"
+
+    },
+    "dataProperties":
+    {
+      "plato:hasStaticValue": "1.2"
+    }
+  }
+}

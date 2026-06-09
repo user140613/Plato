@@ -1,0 +1,214 @@
+{
+  "plato:3dPrinterBedIsPreheated":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "3dPrinterBedIsPreheated",
+    "rdfs:comment": "Requires or sets the bed of a 3d printer to be preheated",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:3dPrinterParameter",
+      "plato:hasAWSPredicate": "plato:HeatedBedIsPreheated"
+    }
+  },
+
+  "plato:3dPrinterCanReachNozzleTemperature":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "3dPrinterCanReachNozzleTemperature",
+    "rdfs:comment": "Requires or sets a temperature that the nozzle of a 3d printer can reach",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:3dPrinterParameter",
+      "plato:hasAWSPredicate": "plato:canReachNozzleTemperature",
+      "plato:hasAWSObject": "plato:3DPrintingNozzleTemperature"
+    }
+  },
+
+  "plato:3dPrintingWorkpieceIsPrinted":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "3dPrintingWorkpieceIsPrinted",
+    "rdfs:comment": "Requires a workpiece to be printed or sets its state to printed",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:3dPrintingWorkpieceParameter",
+      "plato:hasAWSPredicate": "plato:isPrinted"
+    }
+  },
+
+  "plato:PrintWorkpiecePreconditionHotbedHeated":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpiecePreconditionHotbedHeated",
+    "rdfs:comment": "Requires the bed of a 3d printer to be preheated before the printing service can begin",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:3dPrinterBedIsPreheated"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "over all"
+    }
+  },
+
+  "plato:PrintWorkpiecePreconditionHotbedNotHeated":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpiecePreconditionHotbedNotHeated",
+    "rdfs:comment": "Requires the bed of a 3d printer to not be preheated before the printing service can begin",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:3dPrinterBedIsPreheated"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "over all",
+      "plato:isNegated": true
+    }
+  },
+
+  "plato:PrintWorkpiecePreconditionWorkpieceNotPrinted":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpiecePreconditionWorkpieceNotPrinted",
+    "rdfs:comment": "Requires the workpiece that shall be printed to not already have been printed",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:3dPrintingWorkpieceIsPrinted"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start",
+      "plato:isNegated": true
+    }
+  },
+
+  "plato:PrintWorkpiecePreconditionCanReachNozzleTemperature":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpiecePreconditionCanReachNozzleTemperature",
+    "rdfs:comment": "Requires the 3d printer to be able to reach the desired nozzle temperature",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:3dPrinterCanReachNozzleTemperature"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "over all"
+    }
+  },
+
+  "plato:PrintWorkpieceEffectWorkpiecePrinted":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpieceEffectWorkpiecePrinted",
+    "rdfs:comment": "States that a workpiece has been printed",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:3dPrintingWorkpieceIsPrinted"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at end"
+    }
+  },
+
+
+  "plato:PrintWorkpieceEffectHotbedNotHeated":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PrintWorkpieceEffectHotbedNotHeated",
+    "rdfs:comment": "Turns off the heated bed after printing a workpiece",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:3dPrinterBedIsPreheated"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at end",
+      "plato:isNegated": true
+    }
+  },
+
+  "plato:PreheatBedPreconditionBedNotPreheated":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PreheatBedPreconditionBedNotPreheated",
+    "rdfs:comment": "Requires the heated bed of a 3d printer to not already be heated",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:3dPrinterBedIsPreheated"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at start",
+      "plato:isNegated": true
+    }
+  },
+
+  "plato:PreheatBedEffectBedIsPreheated":
+  {
+    "class": "plato:Statement",
+    "rdfs:label": "PreheatBedEffectBedIsPreheated",
+    "rdfs:comment": "Turns on the heated bed after PreheatBed service has concluded",
+    "objectProperties":
+    {
+      "plato:hasAWSSentence": "plato:3dPrinterBedIsPreheated"
+    },
+    "dataProperties":
+    {
+      "plato:hasTimeScope": "at end"
+    }
+  },
+
+  "plato:PrusaMK3001canReachNozzleTemperature250":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "PrusaMK3001canReachNozzleTemperature250",
+    "rdfs:comment": "States that the PrusaMK3001 can reach a nozzle temperature of up to 250 degrees celsius",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:PrusaMK3001",
+      "plato:hasAWSPredicate": "plato:canReachNozzleTemperature",
+      "plato:hasAWSObject": "plato:nozzleTemperatureUpTo250"
+    },
+    "dataProperties":
+    {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:PrusaMK3002canReachNozzleTemperature250":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "PrusaMK3002canReachNozzleTemperature250",
+    "rdfs:comment": "States that the PrusaMK3002 can reach a nozzle temperature of up to 250 degrees celsius",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:PrusaMK3002",
+      "plato:hasAWSPredicate": "plato:canReachNozzleTemperature",
+      "plato:hasAWSObject": "plato:nozzleTemperatureUpTo250"
+    },
+    "dataProperties":
+    {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:AnetA8v2canReachNozzleTemperature200":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "AnetA8v2canReachNozzleTemperature200",
+    "rdfs:comment": "States that the AnetA8v2 can reach a nozzle temperature of up to 200 degrees celsius",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:AnetA8v2",
+      "plato:hasAWSPredicate": "plato:canReachNozzleTemperature",
+      "plato:hasAWSObject": "plato:nozzleTemperatureUpTo200"
+    },
+    "dataProperties":
+    {
+      "plato:isStatic": true
+    }
+  }
+}

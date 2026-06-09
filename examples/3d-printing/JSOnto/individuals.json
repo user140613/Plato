@@ -1,0 +1,89 @@
+{
+  "plato:AdditionOperator":
+  {
+    "class": "plato:EquationOperator",
+    "rdfs:label": "AdditionOperator",
+    "rdfs:comment": "The '+' operator",
+    "dataProperties":
+    {
+      "plato:hasOperatorValue": "+"
+    }
+  },
+
+  "plato:SubtractionOperator":
+  {
+    "class": "plato:EquationOperator",
+    "rdfs:label": "SubtractionOperator",
+    "rdfs:comment": "The '-' operator",
+    "dataProperties":
+    {
+      "plato:hasOperatorValue": "-"
+    }
+  },
+
+  "plato:MultiplicationOperator":
+  {
+    "class": "plato:EquationOperator",
+    "rdfs:label": "MultiplicationOperator",
+    "rdfs:comment": "The '*' operator",
+    "dataProperties":
+    {
+      "plato:hasOperatorValue": "*"
+    }
+  },
+
+  "plato:DivisionOperator":
+  {
+    "class": "plato:EquationOperator",
+    "rdfs:label": "DivisionOperator",
+    "rdfs:comment": "The '/' operator",
+    "dataProperties":
+    {
+      "plato:hasOperatorValue": "/"
+    }
+  },
+
+  "plato:ExponentialOperator":
+  {
+    "class": "plato:EquationOperator",
+    "rdfs:label": "ExponentialOperator",
+    "rdfs:comment": "The 'pow' (exponential) operator",
+    "dataProperties":
+    {
+      "plato:hasOperatorValue": "^"
+    }
+  },
+
+  "plato:Boolean":
+  {
+    "class": "plato:Type",
+    "rdfs:label": "Boolean",
+    "plato:hasPlanningName": "Boolean",
+    "rdfs:comment": "A boolean value"
+  },
+
+  "plato:True":
+  {
+    "class": "plato:Entity",
+    "rdfs:label": "True",
+    "rdfs:comment": "The Boolean Value of 'True'",
+    "plato:hasPlanningName": "True",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Boolean"
+    }
+  },
+
+  "plato:False":
+  {
+    "class": "plato:Entity",
+    "rdfs:label": "False",
+    "rdfs:comment": "The Boolean Value of 'False'",
+    "plato:hasPlanningName": "False",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:Boolean"
+    }
+  }
+
+}

@@ -1,0 +1,52 @@
+{
+  "plato:PrusaMK3001":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "PrusaMK3001",
+    "plato:hasPlanningName": "PrusaMK3001",
+    "rdfs:comment": "A Prusa MK3 3D printer with a heated bed",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:3DPrinter",
+      "plato:hasService": ["plato:PrintWorkpiece", "plato:PreheatBed"]
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:PrusaMK3002":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "PrusaMK3002",
+    "plato:hasPlanningName": "PrusaMK3002",
+    "rdfs:comment": "A Prusa MK3 3D printer with a heated bed",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:3DPrinter",
+      "plato:hasService": ["plato:PrintWorkpiece", "plato:PreheatBed"]
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  },
+
+  "plato:AnetA8v2":
+  {
+    "class": "plato:Resource",
+    "rdfs:label": "AnetA8v2",
+    "plato:hasPlanningName": "AnetA8v2",
+    "rdfs:comment": "A Anet A8 v2 3D printer",
+    "objectProperties":
+    {
+      "plato:hasType": "plato:3DPrinter",
+      "plato:hasService": ["plato:PrintWorkpiece", "plato:PreheatBed"]
+    },
+    "dataProperties":
+    {
+      "plato:isPlanningConstant": true
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{"plato:PrintWorkpieceEntityOrder0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "PrintWorkpieceEntityOrder0",
+    "rdfs:comment": "Orders the parameter 3dPrintingWorkpieceParameter of service PrintWorkpiece",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:3dPrintingWorkpieceParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:PrintWorkpieceEntityOrder1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "PrintWorkpieceEntityOrder1",
+    "rdfs:comment": "Orders the parameter 3dPrinterParameter of service PrintWorkpiece",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:3dPrinterParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  },
+
+  "plato:PrintWorkpieceEntityOrder2":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "PrintWorkpieceEntityOrder2",
+    "rdfs:comment": "Orders the parameter 3DPrintingMaterialParameter of service PrintWorkpiece",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:3DPrintingMaterialParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "2"
+    }
+  },
+
+  "plato:PrintWorkpieceEntityOrder3":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "PrintWorkpieceEntityOrder3",
+    "rdfs:comment": "Orders the parameter 3DPrintingNozzleTemperature of service PrintWorkpiece",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:3DPrintingNozzleTemperature"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "3"
+    }
+  },
+
+  "plato:PrintWorkpieceEntityOrder4":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "PrintWorkpieceEntityOrder4",
+    "rdfs:comment": "Orders the parameter 3DPrintingEstimatedPrintTime of service PrintWorkpiece",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:3DPrintingEstimatedPrintTime"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "4"
+    }
+  },
+
+  "plato:canReachNozzleTemperatureEntityOrder0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "canReachNozzleTemperatureEntityOrder0",
+    "rdfs:comment": "Orders the parameter plato:3dPrinterParameter of the predicate plato:canReachNozzleTemperature",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:3dPrinterParameter"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+  "plato:canReachNozzleTemperatureEntityOrder1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "canReachNozzleTemperatureEntityOrder1",
+    "rdfs:comment": "Orders the parameter plato:3DPrintingNozzleTemperature of the predicate plato:canReachNozzleTemperature",
+    "objectProperties":
+    {
+      "plato:ordersEntity": "plato:3DPrintingNozzleTemperature"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "consumerConfiguration": {
+    "consumer": "Plato",
+    "ontologyPath": "3d-printing.owl"
+  },
+
+  "producerConfiguration":  {
+    "producer": "pddl",
+    "domainFilePath": "domain.pddl",
+    "problemFilePath": "problem.pddl"
+  },
+  
+  "domainType": "NON_TEMPORAL",
+
+  "planningObjects": [
+    ["Workpiece1", "PrintingWorkpiece"]
+  ],
+  "initialState": [
+  ],
+  "goalState": [
+    ["isPrinted", "Workpiece1"]
+  ],
+
+  "metric": "",
+
+  "domainName": "printing_domain",
+  "problemName": "printing_problem",
+
+  "removeNumericExpressions": false,
+
+  "printConfiguration": false
+}

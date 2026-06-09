@@ -1,0 +1,124 @@
+{
+  "plato:IsReady":
+  {
+    "class": "plato:Predicate",
+    "rdfs:label": "IsReady",
+    "plato:hasPlanningName": "IsReady",
+    "rdfs:comment": "Used to state that a machine is ready",
+    "objectProperties":
+    {
+      "plato:hasParameter": "plato:MachineParameter"
+    }
+  },
+
+  "plato:CanPrint":
+  {
+    "class": "plato:Predicate",
+    "rdfs:label": "CanPrint",
+    "plato:hasPlanningName": "CanPrint",
+    "rdfs:comment": "Used to state that a printer can print using a specific material",
+    "objectProperties":
+    {
+      "plato:hasParameter": ["plato:PrinterParameter", "plato:MaterialParameter"],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderPrinterParameter0",
+        "plato:EntityOrderMaterialParameter1"]
+    }
+  },
+
+  "plato:At":
+  {
+    "class": "plato:Predicate",
+    "rdfs:label": "At",
+    "plato:hasPlanningName": "At",
+    "rdfs:comment": "Used to state that a workpiece is located at a specific machine",
+    "objectProperties":
+    {
+      "plato:hasParameter": ["plato:WorkpieceParameter","plato:MachineParameter"],
+      "plato:hasEntityOrder": ["plato:EntityOrderWorkpieceParameter0", "plato:EntityOrderMachineParameter1"]
+    }
+  },
+
+  "plato:InFactory":
+  {
+    "class": "plato:Predicate",
+    "rdfs:label": "InFactory",
+    "plato:hasPlanningName": "InFactory",
+    "rdfs:comment": "Used to state that a machine is located in a specific factory",
+    "objectProperties":
+    {
+      "plato:hasParameter": ["plato:MachineParameter", "plato:FactoryParameter"],
+      "plato:hasEntityOrder": ["plato:EntityOrderMachineParameter0", "plato:EntityOrderFactoryParameter1"]
+    }
+  },
+
+  "plato:IsPrinted":
+  {
+    "class": "plato:Predicate",
+    "rdfs:label": "IsPrinted",
+    "plato:hasPlanningName": "IsPrinted",
+    "rdfs:comment": "Used to state that a workpiece has already been printed",
+    "objectProperties":
+    {
+      "plato:hasParameter": "plato:WorkpieceParameter"
+    }
+  },
+
+  "plato:QualityChecked":
+  {
+    "class": "plato:Predicate",
+    "rdfs:label": "QualityChecked",
+    "plato:hasPlanningName": "QualityChecked",
+    "rdfs:comment": "Used to state that a workpiece has undergone a quality check",
+    "objectProperties":
+    {
+      "plato:hasParameter": "plato:WorkpieceParameter"
+    }
+  },
+
+  "plato:IsMadeOf":
+  {
+    "class": "plato:Predicate",
+    "rdfs:label": "IsMadeOf",
+    "plato:hasPlanningName": "IsMadeOf",
+    "rdfs:comment": "Used to state that a workpiece is made of a specific material",
+    "objectProperties":
+    {
+      "plato:hasParameter": ["plato:WorkpieceParameter", "plato:MaterialParameter"],
+      "plato:hasEntityOrder": ["plato:EntityOrderWorkpieceParameter0", "plato:EntityOrderMaterialParameter1"]
+    }
+  },
+
+  "plato:CanTransportBetween":
+  {
+    "class": "plato:Predicate",
+    "rdfs:label": "CanTransportBetween",
+    "plato:hasPlanningName": "CanTransportBetween",
+    "rdfs:comment": "Used to state that a robot arm can transport a workpiece between two machines",
+    "objectProperties":
+    {
+      "plato:hasParameter": [
+        "plato:RobotParameter",
+        "plato:MachineParameter",
+        "plato:MachineParameter2"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderRobotParameter0",
+        "plato:EntityOrderMachineParameter1",
+        "plato:EntityOrderMachineParameter2_2"
+      ]
+    }
+  },
+
+  "plato:IsAvailable":
+  {
+    "class": "plato:Predicate",
+    "rdfs:label": "IsAvailable",
+    "plato:hasPlanningName": "IsAvailable",
+    "rdfs:comment": "Used to state that a factory is available",
+    "objectProperties":
+    {
+      "plato:hasParameter": "plato:FactoryParameter"
+    }
+  }
+}

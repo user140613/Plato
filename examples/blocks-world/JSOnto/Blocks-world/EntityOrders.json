@@ -1,0 +1,27 @@
+{
+  "plato:ParameterBlock1ParameterOrder0":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "ParameterBlock1ParameterOrder0",
+    "objectProperties": {
+      "plato:ordersEntity": "plato:ParameterBlock1"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "0"
+    }
+  },
+
+  "plato:ParameterBlock2ParameterOrder1":
+  {
+    "class": "plato:EntityOrder",
+    "rdfs:label": "ParameterBlock2ParameterOrder1",
+    "objectProperties": {
+      "plato:ordersEntity": "plato:ParameterBlock2"
+    },
+    "dataProperties":
+    {
+      "plato:hasOrderPosition": "1"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "plato:HeatedBedIsPreheated":
+  {
+    "class": "plato:Predicate",
+    "rdfs:label": "HeatedBedIsPreheated",
+    "plato:hasPlanningName": "HeatedBedIsPreheated",
+    "rdfs:comment": "Used to state that the heated bed of a 3d printer is currently heated",
+    "objectProperties":
+    {
+      "plato:hasParameter": "plato:3dPrinterParameter"
+    }
+  },
+
+  "plato:canReachNozzleTemperature": {
+    "class": "plato:Predicate",
+    "rdfs:label": "canReachNozzleTemperature",
+    "plato:hasPlanningName": "canReachNozzleTemperature",
+    "rdfs:comment": "Used to state that a 3D printer can reach a certain nozzle temperature",
+    "objectProperties": {
+      "plato:hasParameter": [
+        "plato:3dPrinterParameter",
+        "plato:3DPrintingNozzleTemperature"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:canReachNozzleTemperatureEntityOrder0",
+        "plato:canReachNozzleTemperatureEntityOrder1"
+      ]
+    }
+  },
+
+  "plato:isPrinted": {
+    "class": "plato:Predicate",
+    "rdfs:label": "isPrinted",
+    "plato:hasPlanningName": "isPrinted",
+    "rdfs:comment": "Used to state that a 3DPrintingWorkpiece has been printed",
+    "objectProperties": {
+      "plato:hasParameter": "plato:3dPrintingWorkpieceParameter"
+    }
+  }
+}

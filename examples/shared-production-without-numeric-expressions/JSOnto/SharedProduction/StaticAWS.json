@@ -1,0 +1,410 @@
+{
+  "plato:PrusaKLInSmartFactoryKL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "PrusaKLInSmartFactoryKL",
+    "rdfs:comment": "Specifies that the PrusaKL is located in the SMartFactoryKL",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:PrusaKL",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:SmartFactoryKL"
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:UR5eKLInSmartFactoryKL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eKLInSmartFactoryKL",
+    "rdfs:comment": "Specifies that the UR5eKL robot is located in the SMartFactoryKL",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eKL",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:SmartFactoryKL"
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:CameraKLInSmartFactoryKL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "CameraKLInSmartFactoryKL",
+    "rdfs:comment": "Specifies that the CameraKL is located in the SMartFactoryKL",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:CameraKL",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:SmartFactoryKL"
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:WarehouseKLInSmartFactoryKL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "WarehouseKLInSmartFactoryKL",
+    "rdfs:comment": "Specifies that the WarehouseKL is located in the SmartFactoryKL",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:WarehouseKL",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:SmartFactoryKL"
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+
+  "plato:PrusaLemgoInSmartFactoryOWL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "PrusaLemgoInSmartFactoryOWL",
+    "rdfs:comment": "Specifies that the PrusaKL is located in the SmartFactoryOWL",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:PrusaLemgo",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:SmartFactoryOWL"
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:UR5eLemgoInSmartFactoryOWL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eLemgoInSmartFactoryOWL",
+    "rdfs:comment": "Specifies that the UR5eLemgo robot is located in the SmartFactoryOWL",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eLemgo",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:SmartFactoryOWL"
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:CameraLemgoInSmartFactoryOWL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "CameraLemgoInSmartFactoryOWL",
+    "rdfs:comment": "Specifies that the CameraLemgo is located in the SmartFactoryOWL",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:CameraLemgo",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:SmartFactoryOWL"
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:WarehouseLemgoInSmartFactoryOWL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "WarehouseLemgoInSmartFactoryOWL",
+    "rdfs:comment": "Specifies that the WarehouseLemgo is located in the SmartFactoryOWL",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:WarehouseLemgo",
+      "plato:hasAWSPredicate": "plato:InFactory",
+      "plato:hasAWSObject": "plato:SmartFactoryOWL"
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+
+  "plato:UR5eKLCanTransportPrusaKLCameraKL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eKLCanTransportPrusaKLCameraKL",
+    "rdfs:comment": "Specifies that the UR5e robot in KL can transport a workpiece between the printer and the camera",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eKL",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:PrusaKL",
+        "plato:CameraKL"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderPrusaKL0",
+        "plato:EntityOrderCameraKL1"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:UR5eKLCanTransportPrusaKLWarehouseKL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eKLCanTransportPrusaKLWarehouseKL",
+    "rdfs:comment": "Specifies that the UR5e robot in KL can transport a workpiece between the printer and the warehouse",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eKL",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:PrusaKL",
+        "plato:WarehouseKL"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderPrusaKL0",
+        "plato:EntityOrderWarehouseKL1"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:UR5eKLCanTransportCameraKLPrusaKL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eKLCanTransportPrusaKLCameraKL",
+    "rdfs:comment": "Specifies that the UR5e robot in KL can transport a workpiece between the printer and the camera",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eKL",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:CameraKL",
+        "plato:PrusaKL"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderPrusaKL1",
+        "plato:EntityOrderCameraKL0"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:UR5eKLCanTransportCameraKLWarehouseKL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eKLCanTransportCameraKLWarehouseKL",
+    "rdfs:comment": "Specifies that the UR5e robot in KL can transport a workpiece between the camera and the warehouse",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eKL",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:CameraKL",
+        "plato:WarehouseKL"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderWarehouseKL1",
+        "plato:EntityOrderCameraKL0"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:UR5eKLCanTransportWarehouseKLCameraKL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eKLCanTransportWarehouseKLCameraKL",
+    "rdfs:comment": "Specifies that the UR5e robot in KL can transport a workpiece between the warehouse and the camera",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eKL",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:WarehouseKL",
+        "plato:CameraKL"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderWarehouseKL0",
+        "plato:EntityOrderCameraKL1"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:UR5eKLCanTransportWarehouseKLPrusaKL":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eKLCanTransportWarehouseKLPrusaKL",
+    "rdfs:comment": "Specifies that the UR5e robot in KL can transport a workpiece between the warehouse and the printer",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eKL",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:WarehouseKL",
+        "plato:PrusaKL"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderWarehouseKL0",
+        "plato:EntityOrderPrusaKL1"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+
+
+  "plato:UR5eLemgoCanTransportPrusaLemgoCameraLemgo":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eKLCanTransportPrusaKLCameraLemgo",
+    "rdfs:comment": "Specifies that the UR5e robot in Lemgo can transport a workpiece between the printer and the camera",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eLemgo",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:PrusaLemgo",
+        "plato:CameraLemgo"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderPrusaLemgo0",
+        "plato:EntityOrderCameraLemgo1"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:UR5eLemgoCanTransportPrusaLemgoWarehouseLemgo":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eLemgoCanTransportPrusaLemgoWarehouseLemgo",
+    "rdfs:comment": "Specifies that the UR5e robot in Lemgo can transport a workpiece between the printer and the warehouse",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eLemgo",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:PrusaLemgo",
+        "plato:WarehouseLemgo"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderPrusaLemgo0",
+        "plato:EntityOrderWarehouseLemgo1"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:UR5eLemgoCanTransportCameraLemgoPrusaLemgo":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eLemgoCanTransportPrusaLemgoCameraLemgo",
+    "rdfs:comment": "Specifies that the UR5e robot in Lemgo can transport a workpiece between the camera and the printer",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eLemgo",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:CameraLemgo",
+        "plato:PrusaLemgo"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderPrusaLemgo1",
+        "plato:EntityOrderCameraLemgo0"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:UR5eLemgoCanTransportCameraLemgoWarehouseLemgo":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eLemgoCanTransportCameraLemgoWarehouseLemgo",
+    "rdfs:comment": "Specifies that the UR5e robot in Lemgo can transport a workpiece between the camera and the warehouse",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eLemgo",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:CameraLemgo",
+        "plato:WarehouseLemgo"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderCameraLemgo0",
+        "plato:EntityOrderWarehouseLemgo1"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+
+  "plato:UR5eLemgoCanTransportWarehouseLemgoCameraLemgo":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eLemgoCanTransportWarehouseLemgoCameraLemgo",
+    "rdfs:comment": "Specifies that the UR5e robot in Lemgo can transport a workpiece between the warehouse and the camera",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eLemgo",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:WarehouseLemgo",
+        "plato:CameraLemgo"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderWarehouseLemgo0",
+        "plato:EntityOrderCameraLemgo1"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  },
+
+  "plato:UR5eLemgoCanTransportWarehouseLemgoPrusaLemgo":
+  {
+    "class": "plato:AWSSentence",
+    "rdfs:label": "UR5eLemgoCanTransportWarehouseLemgoPrusaLemgo",
+    "rdfs:comment": "Specifies that the UR5e robot in Lemgo can transport a workpiece between the warehouse and the printer",
+    "objectProperties":
+    {
+      "plato:hasAWSSubject": "plato:UR5eLemgo",
+      "plato:hasAWSPredicate": "plato:CanTransportBetween",
+      "plato:hasAWSObject": [
+        "plato:WarehouseLemgo",
+        "plato:PrusaLemgo"
+      ],
+      "plato:hasEntityOrder": [
+        "plato:EntityOrderWarehouseLemgo0",
+        "plato:EntityOrderPrusaLemgo1"
+      ]
+    },
+    "dataProperties": {
+      "plato:isStatic": true
+    }
+  }
+}

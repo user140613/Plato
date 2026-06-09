@@ -1,0 +1,251 @@
+{
+  "plato:hasService":
+  {
+      "rdfs:label": "hasService",
+      "rdfs:comment": "Used to state that a machine offers a service that it can execute",
+      "domain": "plato:Resource",
+      "range": "plato:Service",
+      "inverseOf": "plato:isProvidedBy"
+  },
+
+  "plato:isProvidedBy":
+  {
+    "rdfs:label": "isProvidedBy",
+    "rdfs:comment": "Used to state that a service is offered by a specific machine",
+    "domain": "plato:Service",
+    "range": "plato:Resource",
+    "inverseOf": "plato:hasService"
+  },
+
+  "plato:hasSubService":
+  {
+    "rdfs:label": "hasSubService",
+    "rdfs:comment": "States that a service has a another service that is its subtask",
+    "domain": "plato:Service",
+    "range": "plato:Service"
+  },
+
+  "plato:hasParameter":
+  {
+    "rdfs:label": "hasParameter",
+    "rdfs:comment": "States that a service, a predicate, or a function has a parameter",
+    "domain": ["plato:Service", "plato:Predicate", "plato:Function"],
+    "range": "plato:Parameter"
+  },
+
+  "plato:referencesNumericConstant":
+  {
+    "rdfs:label": "referencesNumericConstant",
+    "rdfs:comment": "Used to reference a NumericConstant instance from a NumericConstantReference",
+    "domain": "plato:NumericConstantReference",
+    "range": "plato:NumericConstant"
+  },
+
+  "plato:hasType":
+  {
+    "rdfs:label": "hasType",
+    "rdfs:comment": "States that a service has a type",
+    "domain": ["plato:Service", "plato:Entity"],
+    "range": "plato:Type"
+  },
+
+  "plato:hasSubType":
+  {
+    "rdfs:label": "hasSubType",
+    "rdfs:comment": "States that a type has a direct sub-type",
+    "domain": "plato:Type",
+    "range": "plato:Type"
+  },
+
+  "plato:hasPrecondition":
+  {
+    "rdfs:label": "hasPrecondition",
+    "rdfs:comment": "States that a service has a precondition that must be satisfied before the service can be executed",
+    "domain": ["plato:Service", "plato:AdvancedStatement"],
+    "range": ["plato:Statement", "plato:AdvancedStatement"]
+  },
+
+  "plato:hasEffect":
+  {
+    "rdfs:label": "hasEffect",
+    "rdfs:comment": "States that a service has an effect that changes the world state when the service is executed",
+    "domain": "plato:Service",
+    "range": "plato:Statement"
+  },
+
+  "plato:hasAWSSentence":
+  {
+    "rdfs:label": "hasAWSSentence",
+    "rdfs:comment": "States that a precondition or an effect has an AWSStatement",
+    "domain": "plato:Statement",
+    "range": "plato:AWSSentence"
+  },
+
+  "plato:hasAWSSubject":
+  {
+    "rdfs:label": "hasAWSSubject",
+    "rdfs:comment": "References the subject of an AWSSentence",
+    "domain": "plato:AWSSentence",
+    "range": "plato:Entity"
+  },
+
+  "plato:hasAWSPredicate":
+  {
+    "rdfs:label": "hasAWSPredicate",
+    "rdfs:comment": "References the predicate of an AWSSentence",
+    "domain": "plato:AWSSentence",
+    "range": "plato:Predicate"
+  },
+
+  "plato:hasAWSObject":
+  {
+    "rdfs:label": "hasAWSObject",
+    "rdfs:comment": "References an object of the AWSSentence",
+    "domain": "plato:AWSSentence",
+    "range": "plato:Entity"
+  },
+
+  "plato:isAffectedBy":
+  {
+    "rdfs:label": "isAffectedBy",
+    "rdfs:comment": "States that a precondition or effect binding is affected by a parameter",
+    "domain": "plato:Binding",
+    "range": "plato:Parameter"
+  },
+
+  "plato:onEntity":
+  {
+    "rdfs:label": "onEntity",
+    "rdfs:comment": "References a CostMapEntry or an InitialFunctionValue with an Entity",
+    "domain": ["plato:CostMapEntry", "plato:InitialFunctionValue"],
+    "range": "plato:Entity"
+  },
+
+  "plato:hasEntityOrder":
+  {
+    "rdfs:label": "hasEntityOrder",
+    "rdfs:comment": "States that an instance has a group of ordered objectProperties relating to entities",
+    "domain": ["plato:Service", "plato:AWSSentence", "plato:Function", "plato:InitialFunctionValue",
+      "plato:Predicate", "plato:Cost", "plato:AdvancedStatement"],
+    "range": "plato:EntityOrder"
+  },
+
+  "plato:ordersEntity":
+  {
+    "rdfs:label": "ordersEntity",
+    "rdfs:comment": "References an entity or service (for subtask ordering) that is ordered by this instance of EntityOrder",
+    "domain": "plato:EntityOrder",
+    "range": ["plato:Entity", "plato:Service"]
+  },
+
+  "plato:hasCost":
+  {
+    "rdfs:label": "hasCost",
+    "rdfs:comment": "States that the execution of a service leads to some costs.",
+    "domain": "plato:Service",
+    "range": "plato:Cost"
+  },
+
+  "plato:hasDuration":
+  {
+    "rdfs:label": "hasDuration",
+    "rdfs:comment": "States that the execution of a service has a certain lead time.",
+    "domain": "plato:Service",
+    "range": "plato:Cost"
+  },
+
+  "plato:targetsFunction":
+  {
+    "rdfs:label": "targetsFunction",
+    "rdfs:comment": "States that some cost should be applied to a specific cost function",
+    "domain": ["plato:Cost", "plato:FunctionCall"],
+    "range": "plato:Function"
+  },
+
+  "plato:hasCostEquation":
+  {
+    "rdfs:label": "hasCostEquation",
+    "rdfs:comment": "Stated that a cost instance has an equation that determines the specific cost value. The cost instance can still have a static cost",
+    "domain": ["plato:Cost", "plato:Metric"],
+    "range": "plato:CostEquationPart"
+  },
+
+  "plato:hasInitialValue":
+  {
+    "rdfs:label": "hasInitialValue",
+    "rdfs:comment": "States than a function has a initial value for a specific set of parameter values",
+    "domain": "plato:Function",
+    "range": "plato:InitialFunctionValue"
+  },
+
+  "plato:hasSubpartA":
+  {
+    "rdfs:label": "hasSubpartA",
+    "rdfs:comment": "Used to reference the first child node of a Binary Expression Tree node describing an equation",
+    "domain": "plato:CostEquationPart",
+    "range": "plato:CostEquationPart"
+  },
+
+  "plato:hasSubpartB":
+  {
+    "rdfs:label": "hasSubpartB",
+    "rdfs:comment": "Used to reference the second child node of a Binary Expression Tree node describing an equation",
+    "domain": "plato:CostEquationPart",
+    "range": "plato:CostEquationPart"
+  },
+
+  "plato:representsValue":
+  {
+    "rdfs:label": "representsValue",
+    "rdfs:comment": "States that a CostEquationPart is a value.",
+    "domain": "plato:CostEquationPart",
+    "range": "plato:EquationValue"
+  },
+
+  "plato:representsOperator":
+  {
+    "rdfs:label": "representsOperator",
+    "rdfs:comment": "States that a CostEquationPart is an operator.",
+    "domain": "plato:CostEquationPart",
+    "range": "plato:EquationOperator"
+  },
+
+  "plato:representsFunctionCall":
+  {
+    "rdfs:label": "representsFunctionCall",
+    "rdfs:comment": "States that a CostEquationPart is a function call.",
+    "domain": "plato:CostEquationPart",
+    "range": "plato:FunctionCall"
+  },
+
+  "plato:referencesParameter":
+  {
+    "rdfs:label": "referencesParameter",
+    "rdfs:comment": "States that an EquationValue is determined by a parameter",
+    "domain": "plato:EquationValue",
+    "range": "plato:Parameter"
+  },
+
+  "plato:hasCostMap": {
+    "rdfs:label": "hasCostMap",
+    "rdfs:comment": "Used for an plato:EquationValue that is determined by a non numeric parameter to map the parameter values to numeric values",
+    "domain": "plato:EquationValue",
+    "range": "plato:CostMap"
+  },
+
+  "plato:hasEntry":
+  {
+    "rdfs:label": "hasEntry",
+    "rdfs:comment": "Used to add an entry to a plato:CostMap",
+    "domain": "plato:CostMap",
+    "range": "plato:CostMapEntry"
+  },
+
+  "plato:withParameter":
+  {
+    "rdfs:label": "withParameter",
+    "rdfs:comment": "Used to specify parameters for a function call or the target function of a service cost",
+    "domain": ["plato:FunctionCall", "plato:Cost"],
+    "range": "plato:Entity"
+  }
+}
